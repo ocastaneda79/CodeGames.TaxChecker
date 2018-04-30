@@ -35,7 +35,7 @@
 
                 string[] siteKeys =
                 {
-                    "Slave", "AnotherSlave"
+                    "Slave", "NewPOLSlave"
                 };
 
                 var message = new StupidMessage
