@@ -38,6 +38,9 @@
     <Reference Include="NServiceBus.Gateway, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <HintPath>..\packages\NServiceBus.Gateway.2.0.1\lib\net452\NServiceBus.Gateway.dll</HintPath>
     </Reference>
+    <Reference Include="RestFramework">
+      <HintPath>NEWPolDependecies\RestFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="TASuite.Commons.Crosscutting">
+      <HintPath>NEWPolDependecies\TASuite.Commons.Crosscutting.dll</HintPath>
+    </Reference>
+    <Reference Include="TASuite.Commons.Crosscutting.Cryptography">
+      <HintPath>NEWPolDependecies\TASuite.Commons.Crosscutting.Cryptography.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InvoiceCreatedHandler.cs" />
@@ -61,6 +70,9 @@
       <Project>{6BF24A21-4D82-4B46-A79D-B87F8DD1B2E9}</Project>
       <Name>Shared.Messages</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NEWPolDependecies\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
