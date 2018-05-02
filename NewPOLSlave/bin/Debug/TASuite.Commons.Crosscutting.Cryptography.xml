@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TASuite.Commons.Crosscutting.Cryptography</name>
+    </assembly>
+    <members>
+        <member name="T:TASuite.Commons.Crosscutting.Cryptography.CryptographyIoCInitialization">
+            <summary>
+            The Cryptography IoC initialization.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.Cryptography.CryptographyIoCInitialization.RegisterDependencies(TASuite.Commons.Crosscutting.IBuilder)">
+            <summary>
+            The register dependencies.
+            </summary>
+            <param name="builder">
+            The builder.
+            </param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.Cryptography.ResourceCertificateProvider">
+            <summary>
+            Provider for token signing.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.Cryptography.ResourceCertificateProvider.GetSecurityToken">
+            <summary>
+            Get security token.
+            </summary>
+            <returns>
+            A <see cref="T:SecurityToken"/> for signing.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.Cryptography.ResourceCertificateProvider.GetSigningCredentials">
+            <summary>
+            Get signed credentials.
+            </summary>
+            <returns>
+            A <see cref="T:SigningCredentials"/> for sign.
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.Cryptography.AuthIdentityToken">
+            <summary>
+            Serialize and deserialize token.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.Cryptography.AuthIdentityToken.#ctor(TASuite.Commons.Crosscutting.ISecurityTokenProvider)">
+            <summary>
+             Create a instance <see cref="T:TASuite.Commons.Crosscutting.Cryptography.AuthIdentityToken" />
+            </summary>
+            <param name="securityToken">signing provider</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.Cryptography.AuthIdentityToken.ReadToken(System.String)">
+            <summary>
+            Deserialize token.
+            </summary>
+            <param name="token">Serialize token.</param>
+            <returns>Identity from token.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.Cryptography.AuthIdentityToken.GenerateToken(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Serialize token.
+            </summary>
+            <param name="identity">Identity to serialize.</param>
+            <returns>Serialize token.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+    </members>
+</doc>

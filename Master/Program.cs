@@ -38,7 +38,7 @@
                     "Slave", "NewPOLSlave"
                 };
 
-                var message = new StupidMessage
+                var message = new InvoiceCreatedMessage
                 {
                     Id = Guid.NewGuid()
                 };

@@ -1,0 +1,1 @@
+<?xml version="1.0"?><InvoiceRecievedMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.net/Shared.Messages"><Sender>NewPOL</Sender><Id>00000000-0000-0000-0000-000000000000</Id></InvoiceRecievedMessage>

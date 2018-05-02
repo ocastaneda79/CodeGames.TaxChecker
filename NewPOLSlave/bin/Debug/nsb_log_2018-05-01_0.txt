@@ -1,0 +1,270 @@
+﻿2018-05-01 19:54:38.119 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\NewPOLSlave\bin\Debug\' with level Info
+2018-05-01 19:54:38.478 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 19:54:38.543 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 19:54:38.554 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 19:54:38.887 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25799/NewPOLSlave/MaxConcurrency=1Default=True
+2018-05-01 19:54:59.196 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 19:54:59.588 INFO  NServiceBus.Pipeline.MessageHandler Message 14a3ad17-585a-4ddb-a4ff-b451359b27c7 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 19:55:27.559 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message 'e133f91f-06bf-4241-ab13-a8d301274079' because of an exception:
+System.UriFormatException: URI no válido: no se pudo analizar la autoridad ni el host.
+   en System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   en System.Uri..ctor(String uriString)
+   en RestFramework.RestClientFluentAPI.GetRestClient(String uri)
+   en NewPOLSlave.InvoiceCreatedHandler.Handle(InvoiceCreatedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\NewPOLSlave\InvoiceCreatedHandler.cs:línea 30
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MutateIncomingMessageBehavior.<InvokeIncomingMessageMutators>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\MessageMutators\MutateInstanceMessage\MutateIncomingMessageBehavior.cs:línea 44
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.UnitOfWorkBehavior.<InvokeUnitsOfWork>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\UnitOfWork\UnitOfWorkBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en NServiceBus.UnitOfWorkBehavior.<InvokeUnitsOfWork>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\UnitOfWork\UnitOfWorkBehavior.cs:línea 62
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MutateIncomingTransportMessageBehavior.<InvokeIncomingTransportMessagesMutators>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\MessageMutators\MutateTransportMessage\MutateIncomingTransportMessageBehavior.cs:línea 43
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 19:55:27.620 INFO  NServiceBus.Pipeline.MessageHandler Message 14a3ad17-585a-4ddb-a4ff-b451359b27c7 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 19:55:36.147 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message 'e133f91f-06bf-4241-ab13-a8d301274079' because of an exception:
+System.UriFormatException: URI no válido: no se pudo analizar la autoridad ni el host.
+   en System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   en System.Uri..ctor(String uriString)
+   en RestFramework.RestClientFluentAPI.GetRestClient(String uri)
+   en NewPOLSlave.InvoiceCreatedHandler.Handle(InvoiceCreatedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\NewPOLSlave\InvoiceCreatedHandler.cs:línea 30
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 19:55:36.172 INFO  NServiceBus.Pipeline.MessageHandler Message 14a3ad17-585a-4ddb-a4ff-b451359b27c7 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 19:55:41.231 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message 'e133f91f-06bf-4241-ab13-a8d301274079' because of an exception:
+System.UriFormatException: URI no válido: no se pudo analizar la autoridad ni el host.
+   en System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   en System.Uri..ctor(String uriString)
+   en RestFramework.RestClientFluentAPI.GetRestClient(String uri)
+   en NewPOLSlave.InvoiceCreatedHandler.Handle(InvoiceCreatedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\NewPOLSlave\InvoiceCreatedHandler.cs:línea 30
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 19:55:41.307 INFO  NServiceBus.Pipeline.MessageHandler Message 14a3ad17-585a-4ddb-a4ff-b451359b27c7 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 19:55:45.046 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message 'e133f91f-06bf-4241-ab13-a8d301274079' because of an exception:
+System.UriFormatException: URI no válido: no se pudo analizar la autoridad ni el host.
+   en System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   en System.Uri..ctor(String uriString)
+   en RestFramework.RestClientFluentAPI.GetRestClient(String uri)
+   en NewPOLSlave.InvoiceCreatedHandler.Handle(InvoiceCreatedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\NewPOLSlave\InvoiceCreatedHandler.cs:línea 30
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 19:55:45.076 INFO  NServiceBus.Pipeline.MessageHandler Message 14a3ad17-585a-4ddb-a4ff-b451359b27c7 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 19:56:44.307 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\NewPOLSlave\bin\Debug\' with level Info
+2018-05-01 19:56:45.147 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 19:56:45.246 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 19:56:45.271 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 19:56:45.403 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25799/NewPOLSlave/MaxConcurrency=1Default=True
+2018-05-01 19:56:45.708 INFO  NServiceBus.Pipeline.MessageHandler Message 14a3ad17-585a-4ddb-a4ff-b451359b27c7 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 20:01:40.124 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\NewPOLSlave\bin\Debug\' with level Info
+2018-05-01 20:01:40.897 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:01:40.971 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:01:41.015 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:01:41.190 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25799/NewPOLSlave/MaxConcurrency=1Default=True
+2018-05-01 20:01:41.863 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:01:42.098 INFO  NServiceBus.Pipeline.MessageHandler Message 14a3ad17-585a-4ddb-a4ff-b451359b27c7 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 20:02:48.797 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:05:41.498 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\NewPOLSlave\bin\Debug\' with level Info
+2018-05-01 20:05:42.217 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:05:42.287 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:05:42.310 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:05:42.466 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25799/NewPOLSlave/MaxConcurrency=1Default=True
+2018-05-01 20:05:43.073 INFO  NServiceBus.Pipeline.MessageHandler Message 14a3ad17-585a-4ddb-a4ff-b451359b27c7 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 20:05:51.734 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:05:55.344 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:05:55.486 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:08:53.272 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\NewPOLSlave\bin\Debug\' with level Info
+2018-05-01 20:08:53.796 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:08:53.866 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:08:53.880 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:08:54.025 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25799/NewPOLSlave/MaxConcurrency=1Default=True
+2018-05-01 20:08:54.449 INFO  NServiceBus.Pipeline.MessageHandler Message 3408a542-8712-400c-b60d-8c564d95b03f received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 20:09:07.922 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:13:41.847 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\NewPOLSlave\bin\Debug\' with level Info
+2018-05-01 20:13:42.408 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:13:42.505 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:13:42.523 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:13:42.711 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25799/NewPOLSlave/MaxConcurrency=1Default=True
+2018-05-01 20:13:43.334 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:13:43.336 INFO  NServiceBus.Pipeline.MessageHandler Message 3408a542-8712-400c-b60d-8c564d95b03f received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 20:13:48.396 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:13:48.513 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:19:15.289 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\NewPOLSlave\bin\Debug\' with level Info
+2018-05-01 20:19:16.012 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:19:16.108 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:19:16.117 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:19:16.403 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25799/NewPOLSlave/MaxConcurrency=1Default=True
+2018-05-01 20:19:17.214 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:19:17.399 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.NewPOLSlave
+2018-05-01 20:19:17.437 INFO  NServiceBus.Pipeline.MessageHandler Message 3610df1e-de91-4759-87ca-b8978caa8125 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 20:24:28.886 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\NewPOLSlave\bin\Debug\' with level Info
+2018-05-01 20:24:29.522 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:24:29.582 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:24:29.602 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:24:29.725 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25799/NewPOLSlave/MaxConcurrency=1Default=True
+2018-05-01 20:24:30.154 INFO  NServiceBus.Pipeline.MessageHandler Message 3610df1e-de91-4759-87ca-b8978caa8125 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 20:26:05.446 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\NewPOLSlave\bin\Debug\' with level Info
+2018-05-01 20:26:05.966 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:26:06.105 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:26:06.257 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:26:06.687 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25799/NewPOLSlave/MaxConcurrency=1Default=True
+2018-05-01 20:26:07.086 INFO  NServiceBus.Pipeline.MessageHandler Message 3610df1e-de91-4759-87ca-b8978caa8125 received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 20:26:09.380 INFO  NServiceBus.Pipeline.MessageHandler Message f4d5e6d9-fbeb-4160-a894-04d42e087d6e received. Reply over channel: http,http://localhost:25599/Master/
+2018-05-01 20:26:40.720 INFO  NServiceBus.Pipeline.MessageHandler Message 3408a542-8712-400c-b60d-8c564d95b03f received. Reply over channel: http,http://localhost:25599/Master/

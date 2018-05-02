@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RestFramework;
 
 namespace NewPOLSlave
 {
@@ -26,13 +27,12 @@ namespace NewPOLSlave
                 Sender = "NewPOL"
             };
 
+            //var client = RestClientFluentAPI.GetRestClient("http://np-dev-ci.northeurope.cloudapp.azure.com")
+            //    .ForTenantWithFakeToken("E2E03");
+
             return context.Reply(acknowledgement);
         }
     }
 
-    internal class InvoiceCreatedMessage
-    {
-        public Guid Id;
-        public string InvoiceNumber;
-    }
+    
 }

@@ -1,0 +1,16 @@
+{
+  "NServiceBus.DestinationSites": "NewPOLSlave",
+  "NServiceBus.MessageId": "4d7317b9-8501-4b67-9ff1-a8d3012a1284",
+  "NServiceBus.MessageIntent": "Send",
+  "NServiceBus.ReplyToAddress": "Gateway.NewPOLSlave-gateway",
+  "NServiceBus.CorrelationId": "4d7317b9-8501-4b67-9ff1-a8d3012a1284",
+  "NServiceBus.OriginatingMachine": "EUES02TALP12620",
+  "NServiceBus.OriginatingEndpoint": "Gateway.Master",
+  "$.diagnostics.originating.hostid": "6d82e1d99ef7a18e02d8e9d3612eaf98",
+  "NServiceBus.ContentType": "text\/xml",
+  "NServiceBus.EnclosedMessageTypes": "Shared.Messages.InvoiceCreatedMessage, Shared.Messages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "NServiceBus.ConversationId": "3769fac8-e017-410b-8e2a-a8d3012a1284",
+  "NServiceBus.Version": "6.4.3",
+  "NServiceBus.TimeSent": "2018-05-01 18:05:14:889311 Z",
+  "NServiceBus.OriginatingSite": "http,http:\/\/localhost:25599\/Master\/"
+}

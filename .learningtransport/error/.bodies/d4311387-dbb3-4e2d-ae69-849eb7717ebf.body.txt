@@ -1,0 +1,1 @@
+<?xml version="1.0"?><InvoiceCreatedMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.net/Shared.Messages"><Id>975365f7-7e97-465e-97a5-2fb0359e093b</Id></InvoiceCreatedMessage>

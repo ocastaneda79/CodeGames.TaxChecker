@@ -1,0 +1,4071 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TASuite.Commons.Crosscutting</name>
+    </assembly>
+    <members>
+        <member name="T:TASuite.Commons.Crosscutting.CachedAsyncAttribute">
+            <summary>
+                This attribute will caching result on method interception.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.CachedAsyncAttribute.CacheStrategy">
+            <summary>
+                Gets or sets the defined strategy to how many time could be a object or element on cache.
+            </summary>
+            <value>
+                The cache strategy.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.CachedAsyncAttribute.RegionName">
+            <summary>
+                Gets or sets the region name.
+            </summary>
+            <value>
+                The region name.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.CachedAsyncAttribute.Span">
+            <summary>
+                Gets or sets the defined a value of time span with specific strategy.
+            </summary>
+            <value>
+                The span element.
+            </value>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CachedAsyncAttribute.Advise(ArxOne.MrAdvice.Advice.MethodAsyncAdviceContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.CacheProvider">
+            <summary>
+            The cache provider.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.CacheProvider.CurrentProvider">
+            <summary>
+            Gets the current provider.
+            </summary>
+            <value>
+            The current provider.
+            </value>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CacheProvider.SetProviderFactory(System.Func{TASuite.Commons.Crosscutting.ICacheProvider})">
+            <summary>
+            The set provider.
+            </summary>
+            <param name="providerFactory">
+            The provider.
+            </param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.CacheServiceType">
+            <summary>
+            The cache service type.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.CacheServiceType.None">
+            <summary>
+            Disable cache.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.CacheServiceType.MemoryCache">
+            <summary>
+            The memory cache, use a runtime cache.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.CacheServiceType.Redis">
+            <summary>
+            The REDIS, use distributed REDIS cache, is mandaroty connection string "Redis/Cache".
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ICacheProvider">
+            <summary>
+                The CacheProvider interface. This declare aside-cache pattern.
+                for more information https://msdn.microsoft.com/en-us/library/dn589799.aspx.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ICacheProvider.GetAsync``1(System.String,System.String)">
+            <summary>
+            The get element sync from cache.
+            </summary>
+            <param name="key">
+            The key to find element.
+            </param>
+            <param name="region">
+            The region.
+            </param>
+            <typeparam name="T">
+            Type of returned object.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> than return a object of T type.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ICacheProvider.GetOrSetAsync``1(System.String,System.Func{System.Threading.Tasks.Task{``0}},System.TimeSpan,System.String)">
+            <summary>
+            The get or set sync object associated to key.
+            </summary>
+            <param name="key">
+            The key to find element.
+            </param>
+            <param name="getter">
+            The getter of original object in case that not exists in cache.
+            </param>
+            <param name="expiration">
+            The expiration.
+            </param>
+            <param name="region">
+            The region.
+            </param>
+            <typeparam name="T">
+            Type of returned object.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> than return a object of T type.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ICacheProvider.RemoveAsync(System.String,System.String)">
+            <summary>
+            The remove sync.
+            </summary>
+            <param name="key">
+            The key to find element.
+            </param>
+            <param name="region">
+            The region.
+            </param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> than return a object of T type.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ICacheProvider.SetAsync``1(System.String,``0,System.TimeSpan,System.String)">
+            <summary>
+            The set sync.
+            </summary>
+            <param name="key">
+            The key to find element.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="expiration">
+            The expiration.
+            </param>
+            <param name="region">
+            The region.
+            </param>
+            <typeparam name="T">
+            The type of object associated to key.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> than return a object of T type.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ICacheProvider.ClearCacheAsync">
+            <summary>
+            The clear cache async.
+            </summary>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ICacheProvider.ClearRegionAsync(System.String)">
+            <summary>
+            The clear region async.
+            </summary>
+            <param name="region">
+            The region.
+            </param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.MemoryCacheProvider">
+            <summary>
+                The memory cache provider is a memory implementation of Runtime memory cache.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.MemoryCacheProvider.tracer">
+            <summary>
+                The tracer.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.#ctor(TASuite.Commons.Crosscutting.ITracer)">
+            <summary>
+                Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.MemoryCacheProvider" /> class.
+            </summary>
+            <param name="tracer">
+                The tracer.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+                The tracer could not be null.
+            </exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.Finalize">
+            <inheritdoc />
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.MemoryCacheProvider.Cache">
+            <summary>
+                Gets or sets the cache.
+            </summary>
+            <value>
+                The cache.
+            </value>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.Get``1(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.GetAsync``1(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.GetOrSet``1(System.String,System.Func{``0},System.TimeSpan,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.GetOrSetAsync``1(System.String,System.Func{System.Threading.Tasks.Task{``0}},System.TimeSpan,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.Remove(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.RemoveAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.SetAsync``1(System.String,``0,System.TimeSpan,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.ClearCacheAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.ClearRegionAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.WarmUpAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.MemoryCacheProvider.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.NoneCacheProvider">
+            <summary>
+            Define not enable cache.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NoneCacheProvider.WarmUpAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NoneCacheProvider.GetAsync``1(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NoneCacheProvider.GetOrSetAsync``1(System.String,System.Func{System.Threading.Tasks.Task{``0}},System.TimeSpan,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NoneCacheProvider.RemoveAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NoneCacheProvider.SetAsync``1(System.String,``0,System.TimeSpan,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NoneCacheProvider.ClearCacheAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NoneCacheProvider.ClearRegionAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NoneCacheProvider.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.TimespanCacheStrategy">
+            <summary>
+            Define a strategy for caching results.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.TimespanCacheStrategy.PerSeconds">
+            <summary>
+            How many seconds must be on cache elements.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.TimespanCacheStrategy.PerMinutes">
+            <summary>
+            How many minutes must be on cache elements.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.TimespanCacheStrategy.PerHours">
+            <summary>
+            How many hours must be on cache elements.
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IAuthIdentityToken">
+            <summary>
+            The AuthToken interface
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthIdentityToken.ReadToken(System.String)">
+            <summary>
+            Deserialize token.
+            </summary>
+            <param name="token">Serialize token.</param>
+            <returns>Identity from token.</returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthIdentityToken.GenerateToken(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Serialize token.
+            </summary>
+            <param name="identity">Identity to serialize.</param>
+            <returns>Serialize token.</returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ISecurityTokenProvider">
+            <summary>
+            The securityTokenProvider interface
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISecurityTokenProvider.GetSecurityToken">
+            <summary>
+            Get security token.
+            </summary>
+            <returns>
+            A <see cref="T:SecurityToken"/> for signing.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISecurityTokenProvider.GetSigningCredentials">
+            <summary>
+            Get singning credentials.
+            </summary>
+            <returns>
+            A <see cref="T:SigningCredentials"/> for signing.
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ContextValidateEmpty">
+            <summary>
+            Validate context class.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ContextValidateEmpty.Validate">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IContextValidation">
+            <summary>
+            The interface to validate de context headers.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IContextValidation.Validate">
+            <summary>
+            Validate the user context headers.
+            </summary>
+            <returns>
+            The <see cref="T:System.Boolean"/> .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.FailedMessageDto">
+            <summary>
+            Error message event data.
+            
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.FailedMessageDto.Exception">
+            <summary>
+            The exception that caused this message to fail.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.FailedMessageDto.Body">
+            <summary>
+            The body content of the message
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.FailedMessageDto.MessageId">
+            <summary>
+            The id of the message.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.FailedMessageDto.Headers">
+            <summary>
+            The headers of the message
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.FailedMessageDto.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Byte[],System.Exception)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name = "messageId">The id of the message.</param>
+            <param name="headers">The headers of the message</param>
+            <param name="body">byte array to the body content of the message</param>
+            <param name="exception">The exception that caused this message to fail.</param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ITracer">
+            <summary>
+            The Tracer interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ITracer.Error(System.String,System.Object[])">
+            <summary>
+            Error message
+            </summary>
+            <param name="message">The error message</param>
+            <param name="args">Positional parameters to embedd into the message</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ITracer.Warning(System.String,System.Object[])">
+            <summary>
+            Warning message
+            </summary>
+            <param name="message">The error message</param>
+            <param name="args">Positional parameters to embedd into the message</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ITracer.Info(System.String,System.Object[])">
+            <summary>
+            Informative message
+            </summary>
+            <param name="message">The error message</param>
+            <param name="args">Positional parameters to embedd into the message</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ITracer.Debug(System.String,System.Object[])">
+            <summary>
+            Messajes to aid in the debug process
+            </summary>
+            <param name="message">The error message</param>
+            <param name="args">Positional parameters to embedd into the message</param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.TracerEmpty">
+            <summary>
+               Implementation of the ITracer.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.TracerEmpty.Debug(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.TracerEmpty.Error(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.TracerEmpty.Info(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.TracerEmpty.Warning(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.DataException">
+            <summary>
+            The exception launched when some check of the integrity of the data fails.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.DataException.#ctor">
+            <summary>
+            Builds a Data Exception Exception. 
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.DataException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Builds a Data Exception Exception. 
+            </summary>
+            <param name="code">The code for the exception</param>
+            <param name="parameters">the Parameters needed to contextualize the exception</param>
+            <param name="defaultMessage">The default message</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.DataException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Exception)">
+            <summary>
+            Builds a Data Exception Exception. 
+            </summary>
+            <param name="code">The code for the exception</param>
+            <param name="parameters">the Parameters needed to contextualize the exception</param>
+            <param name="message">The message of exception</param>
+            <param name="innerException">The inner exception wrapped</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.DataException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Newpol Exception Constructor for the serialization framework.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.CodeException">
+            <summary>
+            The exception launched when the contracts of the code are incorrect.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CodeException.#ctor">
+            <summary>
+            Builds a Code Exception Exception. 
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CodeException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Builds a Code Exception Exception. 
+            </summary>
+            <param name="code">The code for the exception</param>
+            <param name="parameters">the Parameters needed to contextualize the exception</param>
+            <param name="defaultMessage">the default message</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CodeException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Exception)">
+            <summary>
+            Builds a Code Exception Exception. 
+            </summary>
+            <param name="code">The code for the exception</param>
+            <param name="parameters">the Parameters needed to contextualize the exception</param>
+            <param name="message">The message of exception</param>
+            <param name="innerException">The inner exception wrapped</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CodeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Newpol Exception Constructor for the serialization framework.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.EventualException">
+            <summary>
+            The exception base for the Eventual exceptions. This subtree exception models those errors that could disappear retrying the operation a little later.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.EventualException.#ctor">
+            <summary>
+            Builds a EventualException Exception. 
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.EventualException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Builds a EventualException Exception. 
+            </summary>
+            <param name="code">The code for the exception</param>
+            <param name="parameters">the Parameters needed to contextualize the exception</param>
+            <param name="defaultMessage"></param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.EventualException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Exception)">
+            <summary>
+            Builds a EventualException Exception. 
+            </summary>
+            <param name="code">The code for the exception</param>
+            <param name="parameters">the Parameters needed to contextualize the exception</param>
+            <param name="message">The message of exception</param>
+            <param name="innerException">The inner exception wrapped</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.EventualException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Newpol Exception Constructor for the serialization framework.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.BusinessException">
+            <summary>
+            The exception base for the Business exceptions. This sub-tree exception models those errors will still wrong
+                regardless how many times you can retry.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.BusinessException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.BusinessException"/> class. 
+                Builds a business Exception.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.BusinessException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.BusinessException"/> class. 
+            Builds a business Exception.
+            </summary>
+            <param name="code">
+            The code for the exception.
+            </param>
+            <param name="parameters">
+            The Parameters needed to contextualize the exception.
+            </param>
+            <param name="defaultMessage">
+            The default message.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.BusinessException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.BusinessException"/> class. 
+            Builds a business Exception.
+            </summary>
+            <param name="code">
+            The code for the exception.
+            </param>
+            <param name="parameters">
+            The Parameters needed to contextualize the exception.
+            </param>
+            <param name="message">
+            The message of exception.
+            </param>
+            <param name="innerException">
+            The inner exception wrapped.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.BusinessException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.BusinessException"/> class. 
+            NEWPOL Exception Constructor for the serialization framework.
+            </summary>
+            <param name="info">
+            The serialization information.
+            </param>
+            <param name="context">
+            The context.
+            </param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ErrorNode">
+            <summary>
+            The error descriptor to export. This error descriptor is designed to be light and not to contains
+            the amount of information the exception but a subset to display for the end user.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ErrorNode.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.IEnumerable{TASuite.Commons.Crosscutting.ErrorNode})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.ErrorNode"/> class. 
+            </summary>
+            <param name="code">
+            The code for the error.
+            </param>
+            <param name="parameters">
+            The parameters to contextualize the error.
+            </param>
+            <param name="nodesToAssign">
+            The child nodes.
+            </param>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.ErrorNode.Childs">
+            <summary>
+            Gets the inner error nodes.
+            </summary>
+            <value>
+            The childs.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.ErrorNode.Code">
+            <summary>
+            Gets the error code for the actual node, if exists.
+            </summary>
+            <value>
+            The code to translate.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.ErrorNode.Parameters">
+            <summary>
+            Gets the parameters to contextualize the message.
+            </summary>
+            <value>
+            The parameters.
+            </value>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ErrorNode.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ErrorNode.GetHashCode">
+            <summary>
+            Serves as the default hash function. 
+            </summary>
+            <returns>
+            A hash code for the current object.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ErrorNode.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>
+            A string that represents the current object.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ExceptionConstants">
+            <summary>
+            Extensions for the c# exceptions for the newpol system
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.ExceptionConstants.CodeForNonCodedExceptions">
+            <summary>
+            The code used when the system convert a c# exception or a Newpol exception without Code.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.ExceptionConstants.KeyForExceptionName">
+            <summary>
+            The first key parameter in the array parameters of the error node for a c# exception or a Newpol exception without Code.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.ExceptionConstants.KeyForExceptionMessage">
+            <summary>
+            The second key parameter in the array parameters of the error node for a c# exception or a Newpol exception without Code.
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.NewpolAggregateException">
+            <summary>
+            Exception for aggregate the process rule exceptions in one single exception.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.NewpolAggregateException.Errors">
+            <summary>
+            The detailed list of the exceptions aggregated
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.NewpolAggregateException.HasExceptions">
+            <summary>
+            True if the aggregate exception contains other exceptions
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.#ctor">
+            <summary>
+            Builds a aggregate Exception. 
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.#ctor(TASuite.Commons.Crosscutting.NewpolException[])">
+            <summary>
+            Builds a business rule Exception with contained newpol exceptions.
+            </summary>
+            <param name="exceptions">A list of newpol aggregated exceptions</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for the serialization framework.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            When overridden in a derived class, sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"/> with information about the exception.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown. </param><param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination. </param><exception cref="T:System.ArgumentNullException">The <paramref name="info"/> parameter is a null reference (Nothing in Visual Basic). </exception><filterpriority>2</filterpriority><PermissionSet><IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*"/><IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="SerializationFormatter"/></PermissionSet>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.AddException(TASuite.Commons.Crosscutting.NewpolException)">
+            <summary>
+            Adds a Newpol exception to  the aggregate
+            </summary>
+            <param name="exception"></param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>
+            A string representation of the current exception.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.ToErrorNodes">
+            <summary>
+            Generate a Error Node representation for the current exception
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <returns>
+            true if the specified object  is equal to the current object; otherwise, false.
+            </returns>
+            <param name="obj">The object to compare with the current object. </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.GetHashCode">
+            <summary>
+            Serves as the default hash function. 
+            </summary>
+            <returns>
+            A hash code for the current object.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.op_Equality(TASuite.Commons.Crosscutting.NewpolAggregateException,TASuite.Commons.Crosscutting.NewpolAggregateException)">
+            <summary>
+            Override == operator
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.op_Inequality(TASuite.Commons.Crosscutting.NewpolAggregateException,TASuite.Commons.Crosscutting.NewpolAggregateException)">
+            <summary>
+            override != operator
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolAggregateException.Merge(TASuite.Commons.Crosscutting.NewpolAggregateException)">
+            <summary>
+            Appends the exceptions in the aggregate exception parameter to the owned list
+            </summary>
+            <param name="other">aggregate exception to merge with the actual.</param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.NewpolConfigurationException">
+            <summary>
+            Exception for the initializacion and configuration errors
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolConfigurationException.#ctor">
+            <summary>
+            Builds a Newpol Configuration Exception. 
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolConfigurationException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Builds a Newpol Configuration Exception.
+            </summary>
+            <param name="code">The code for the exception</param>
+            <param name="parameters">the Parameters needed to contextualize the exception</param>
+            <param name="defaultMessage"></param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolConfigurationException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Exception)">
+            <summary>
+            Builds a Newpol Configuration Exception.
+            </summary>
+            <param name="code">The code for the exception</param>
+            <param name="parameters">the Parameters needed to contextualize the exception</param>
+            <param name="message">The message of exception</param>
+            <param name="innerException">The inner exception wrapped</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolConfigurationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Newpol Exception Constructor for the serialization framework.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ExceptionExtensions">
+            <summary>
+            Extensions for the c# exceptions for the newpol system
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ExceptionExtensions.ToErrorNodes(System.Exception)">
+            <summary>
+            Generate a Error Node representation for the current exception
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.NewpolException">
+            <summary>
+            The exception base of the NEWPOL Exceptions Tree.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.NewpolException.Code">
+            <summary>
+            Gets code for the exception.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.NewpolException.Parameters">
+            <summary>
+            The Parameters to contextualize the exception.
+            </summary>
+            <value>
+            The parameters.
+            </value>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.NewpolException"/> class. 
+                Builds a exception base of a NEWPOL Exception.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.NewpolException"/> class. 
+            Builds a exception base of a NEWPOL Exception.
+            </summary>
+            <param name="code">
+            The code for the exception.
+            </param>
+            <param name="parameters">
+            The Parameters needed to contextualize the exception.
+            </param>
+            <param name="defaultMessage">
+            The default message.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.NewpolException"/> class. 
+            Builds a exception base of a NEWPOL Exception with inner exception.
+            </summary>
+            <param name="code">
+            The code for the exception.
+            </param>
+            <param name="parameters">
+            The Parameters needed to contextualize the exception.
+            </param>
+            <param name="message">
+            The message of exception.
+            </param>
+            <param name="innerException">
+            The inner exception wrapped.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.NewpolException"/> class. 
+            NEWPOL Exception Constructor for the serialization framework.
+            </summary>
+            <param name="info">
+            The serialization information.
+            </param>
+            <param name="context">
+            The context.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Newpol Exception helper for the serialization framework.
+            </summary>
+            <param name="info">
+            </param>
+            <param name="context">
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolException.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <returns>
+            True if the specified object  is equal to the current object; otherwise, false.
+            </returns>
+            <param name="obj">
+            The object to compare with the current object. 
+            </param>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolException.GetHashCode">
+            <summary>
+            Serves as the default hash function.
+            </summary>
+            <returns>
+            A hash code for the current object.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolException.op_Equality(TASuite.Commons.Crosscutting.NewpolException,TASuite.Commons.Crosscutting.NewpolException)">
+            <summary>
+            Equality operator.
+            </summary>
+            <param name="left">
+            Left operand.
+            </param>
+            <param name="right">
+            Right operand.
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolException.op_Inequality(TASuite.Commons.Crosscutting.NewpolException,TASuite.Commons.Crosscutting.NewpolException)">
+            <summary>
+            Inequality operator.
+            </summary>
+            <param name="left">
+            Left operand.
+            </param>
+            <param name="right">
+            Right operand.
+            </param>
+            <returns>
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolException.ToErrorNodes">
+            <summary>
+            Generate a Error Node representation for the current exception.
+            </summary>
+            <returns>
+            The <see>
+                    <cref>ErrorNode[]</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.NewpolSecurityException">
+            <summary>
+            The NEWPOL security exception.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolSecurityException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.NewpolSecurityException"/> class.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolSecurityException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.NewpolSecurityException"/> class.
+            </summary>
+            <param name="code">
+            The code for translation.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <param name="defaultMessage">
+            The default message.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolSecurityException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.NewpolSecurityException"/> class.
+            </summary>
+            <param name="info">
+            The serialization information.
+            </param>
+            <param name="context">
+            The context.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.NewpolSecurityException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.NewpolSecurityException"/> class.
+            </summary>
+            <param name="code">
+            The code for translation.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <param name="message">
+            The message.
+            </param>
+            <param name="innerException">
+            The inner exception.
+            </param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.FunctionalityValidateEmpty">
+            <summary>
+            The functionality validate empty.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.FunctionalityValidateEmpty.Validate(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IFunctionalityValidation">
+            <summary>
+            The FunctionalityValidation interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IFunctionalityValidation.Validate(System.String)">
+            <summary>
+            Validate the user role.
+            </summary>
+            <param name="functionality">
+            The functionality.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/> .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.CrosscuttingIoCInitialization">
+            <summary>
+                Initialize Crosscutting dependencies.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CrosscuttingIoCInitialization.RegisterDependencies(TASuite.Commons.Crosscutting.IBuilder)">
+            <summary>
+                The register dependencies.
+            </summary>
+            <param name="builder">
+                The builder.
+            </param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IRoutingDeclaration">
+            <summary>
+            Define a declaration of message routing.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IRoutingDeclaration.AssemblyName">
+            <summary>
+            Gets or sets the message assembly for the endpoint mapping.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IRoutingDeclaration.Endpoint">
+            <summary>
+            Gets or sets the endpoint named according to "queue@machine".
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IRoutingDeclaration.Messages">
+            <summary>
+            Gets or sets a string defining the message assembly, or single message type.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IRoutingDeclaration.Namespace">
+            <summary>
+            Gets or sets The message type. Define this if you want to map all the types in the namespace to the endpoint.
+            </summary>
+            <remarks>
+            Sub-namespaces will not be mapped.
+            </remarks>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IRoutingDeclaration.Type">
+            <summary>
+            Gets or set The message type. Define this if you want to map a single message type to the endpoint.
+            </summary>
+            <remarks>
+            Type will take preference above namespace
+            </remarks>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.RoutingDeclaration">
+            <summary>
+            Implement a <see cref="T:TASuite.Commons.Crosscutting.IRoutingDeclaration"/>
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.RoutingDeclaration.AssemblyName">
+            <summary>
+            Gets or sets the message assembly for the endpoint mapping.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.RoutingDeclaration.Endpoint">
+            <summary>
+            Gets or sets the endpoint named according to "queue@machine".
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.RoutingDeclaration.Messages">
+            <summary>
+            Gets or sets a string defining the message assembly, or single message type.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.RoutingDeclaration.Namespace">
+            <summary>
+            Gets or sets The message type. Define this if you want to map all the types in the namespace to the endpoint.
+            </summary>
+            <remarks>
+            Sub-namespaces will not be mapped.
+            </remarks>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.RoutingDeclaration.Type">
+            <summary>
+            Gets or set The message type. Define this if you want to map a single message type to the endpoint.
+            </summary>
+            <remarks>
+            Type will take preference above namespace
+            </remarks>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.CrosscuttingInitializationException">
+            <summary>
+            Exception launched in the croscutting initialization
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CrosscuttingInitializationException.#ctor">
+            <summary>
+            Builds a croscutting initialization Exception. 
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CrosscuttingInitializationException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Builds a croscutting initialization Exception. 
+            </summary>
+            <param name="code">The code for the exception</param>
+            <param name="parameters">the Parameters needed to contextualize the exception</param>
+            <param name="defaultMessage">The default message</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CrosscuttingInitializationException.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Exception)">
+            <summary>
+            Builds a croscutting initialization Exception. 
+            </summary>
+            <param name="code">The code for the exception</param>
+            <param name="parameters">the Parameters needed to contextualize the exception</param>
+            <param name="message">The message of exception</param>
+            <param name="innerException">The inner exception wrapped</param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CrosscuttingInitializationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Newpol Exception Constructor for the serialization framework.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IBuilder">
+            <summary>
+                The Builder interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Build">
+            <summary>
+                The build method will construct and register dependencies in container, register a IoCContainer as a single
+                instance
+                and then return it.
+            </summary>
+            <returns>
+                The <see cref="T:TASuite.Commons.Crosscutting.IIoCContainer" />.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Build(System.Action{TASuite.Commons.Crosscutting.IBuilder})">
+            <summary>
+                The build method will construct and register dependencies in container, register a IoCContainer as a single
+                instance
+                and then return it.
+            </summary>
+            <param name="lastRegistrationAction">
+                The last registration action to be called.
+            </param>
+            <returns>
+                The <see cref="T:TASuite.Commons.Crosscutting.IIoCContainer" />.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Register``2">
+            <summary>
+                This method will register TClass as implementation of TInterface .
+            </summary>
+            <typeparam name="TInterface">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of class to be registered.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Register``2(System.String)">
+            <summary>
+                This method will register TClass as implementation of TInterface with named alias.
+            </summary>
+            <param name="name">
+                The name of alias to register.
+            </param>
+            <typeparam name="TInterface">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Register``2(System.Enum)">
+            <summary>
+                This method will register TClass as implementation of TInterface with keyed alias.
+            </summary>
+            <param name="key">
+                The key of alias to register.
+            </param>
+            <typeparam name="TInterface">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Register``3">
+            <summary>
+                Register instance of TClass than implement TInterface1 and TInterface2, this is applied when isolate.
+            </summary>
+            <typeparam name="TInterface1">
+                The main interface than define a part.
+            </typeparam>
+            <typeparam name="TInterface2">
+                This interface inherit from interface 1 and extend functionality.
+            </typeparam>
+            <typeparam name="TClass">
+                The class type that will registered as implementation of TInterface1 and TInterface2.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Register``3(System.String)">
+            <summary>
+                Register instance of TClass than implement TInterface1 and TInterface2, this is applied when isolate with alias.
+            </summary>
+            <param name="name">
+                The alias name.
+                The name.
+            </param>
+            <typeparam name="TInterface1">
+                The main interface than define a part.
+            </typeparam>
+            <typeparam name="TInterface2">
+                This interface inherit from interface 1 and extend functionality.
+            </typeparam>
+            <typeparam name="TClass">
+                The class type that will registered as implementation of TInterface1 and TInterface2.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Register``3(System.Enum)">
+            <summary>
+                Register instance of TClass than implement TInterface1 and TInterface2, this is applied when isolate with keyed
+                named.
+            </summary>
+            <param name="key">
+                The key.
+                The name.
+            </param>
+            <typeparam name="TInterface1">
+                The main interface than define a part.
+            </typeparam>
+            <typeparam name="TInterface2">
+                This interface inherit from interface 1 and extend functionality.
+            </typeparam>
+            <typeparam name="TClass">
+                The class type that will registered as implementation of TInterface1 and TInterface2.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Register``1">
+            <summary>
+                The register a single class.
+            </summary>
+            <typeparam name="TClass">
+                The type of class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Register``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0})">
+            <summary>
+                This will register a type that will construct by a parameter constructor.
+            </summary>
+            <param name="constructor">
+                The constructor function.
+            </param>
+            <typeparam name="TClass">
+                The type to be registered.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Register``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0},System.String)">
+            <summary>
+                This will register a type that will construct by a parameter constructor with alias name.
+            </summary>
+            <param name="constructor">
+                The constructor.
+            </param>
+            <param name="name">
+                The name to be register as alias.
+            </param>
+            <typeparam name="TClass">
+                The than will resolve from constructor function.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.Register``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0},System.Enum)">
+            <summary>
+                This will register a type that will construct by a parameter constructor with keyed name.
+            </summary>
+            <param name="constructor">
+                The constructor.
+            </param>
+            <param name="key">
+                The key to be registered for alias.
+            </param>
+            <typeparam name="TClass">
+                The than will resolve from constructor function.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAllFromBaseTypeAsSelf``1(System.Reflection.Assembly)">
+            <summary>
+                Register all inhered types as self.
+            </summary>
+            <param name="fromAssembly">
+                The from Assembly.
+            </param>
+            <typeparam name="TBase">
+                The type of base type.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAsSelfOwnerDisposable``1">
+            <summary>
+                Register as self disposable instance.
+                The destruction of this instance will be delegate to owner.
+            </summary>
+            <typeparam name="T">
+                The type hosted.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAssemblyTypes``1(System.Reflection.Assembly)">
+            <summary>
+                The register assembly types than implement in assembly as T.
+            </summary>
+            <param name="assembly">
+                The assembly.
+            </param>
+            <typeparam name="T">
+                The base type to search.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAssemblyTypesAsSingleton``1(System.Reflection.Assembly)">
+            <summary>
+                The register assembly types than implement in assembly as T as singleton.
+            </summary>
+            <param name="assembly">
+                The assembly.
+            </param>
+            <typeparam name="T">
+                The base type to search.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAssemblyTypes``1(System.Reflection.Assembly,System.String)">
+            <summary>
+                The register assembly types.
+            </summary>
+            <param name="assembly">
+                The assembly.
+            </param>
+            <param name="name">
+                The name of alias to be registered.
+            </param>
+            <typeparam name="T">
+                The to be search on assemblies.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAsSingleInstance``2">
+            <summary>
+                Register as singleton instance of TClass than implement TInterface.
+            </summary>
+            <typeparam name="TInterface">
+                The interface than implement TClass.
+            </typeparam>
+            <typeparam name="TClass">
+                The class type that will registered as implementation of TInterface as a singleton instance.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAsSingleInstance``3">
+            <summary>
+                Register as singleton instance of TClass than implement TInterface1 and TInterface2, this is applied when isolate.
+            </summary>
+            <typeparam name="TInterface1">
+                The main interface than define a part.
+            </typeparam>
+            <typeparam name="TInterface2">
+                This interface inherit from interface 1 and extend functionality.
+            </typeparam>
+            <typeparam name="TClass">
+                The class type that will registered as implementation of TInterface1 and TInterface2 as a singleton instance.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAsSingleInstance``2(System.String)">
+            <summary>
+                Register as singleton instance of TClass than implement TInterface.
+            </summary>
+            <param name="name">
+                The name of alias to be registered.
+            </param>
+            <typeparam name="TInterface">
+                The interface than implement TClass.
+            </typeparam>
+            <typeparam name="TClass">
+                The class type that will registered as implementation of TInterface as a singleton instance.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAsSingleInstance``2(System.Enum)">
+            <summary>
+                Register as singleton instance of TClass than implement TInterface and associated to enum value.
+            </summary>
+            <param name="key">
+                The key to be registered as alias.
+            </param>
+            <typeparam name="TInterface">
+                The interface than implement TClass.
+            </typeparam>
+            <typeparam name="TClass">
+                The class type that will registered as implementation of TInterface as a singleton instance.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAsSingleInstance``3(System.String)">
+            <summary>
+                Register as singleton instance of TClass than implement TInterface1 and TInterface2, this is applied when isolate
+                with alias.
+            </summary>
+            <param name="name">
+                The alias name.
+            </param>
+            <typeparam name="TInterface1">
+                The main interface than define a part.
+            </typeparam>
+            <typeparam name="TInterface2">
+                This interface inherit from interface 1 and extend functionality.
+            </typeparam>
+            <typeparam name="TClass">
+                The class type that will registered as implementation of TInterface1 and TInterface2 as a singleton instance.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAsSingleInstance``3(System.Enum)">
+            <summary>
+                Register as singleton instance of TClass than implement TInterface1 and TInterface2, this is applied when isolate
+                with keyed name.
+            </summary>
+            <param name="key">
+                The alias name.
+            </param>
+            <typeparam name="TInterface1">
+                The main interface than define a part.
+            </typeparam>
+            <typeparam name="TInterface2">
+                This interface inherit from interface 1 and extend functionality.
+            </typeparam>
+            <typeparam name="TClass">
+                The class type that will registered as implementation of TInterface1 and TInterface2 as a singleton instance.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAsSingleInstance``1(System.Type,System.String)">
+            <summary>
+                The register as singleton instance of type (see parameter) as T type .
+            </summary>
+            <param name="type">
+                The type of instance.
+            </param>
+            <param name="name">
+                The name to be registered as alias.
+            </param>
+            <typeparam name="T">
+                The type of interface instance.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAsSingleInstance``1(System.Type,System.Enum)">
+            <summary>
+                The register as singleton instance of type (see parameter) as T type with keyed.
+            </summary>
+            <param name="type">
+                The type of instance.
+            </param>
+            <param name="key">
+                The key to be registered as alias.
+            </param>
+            <typeparam name="T">
+                The type of interface of instance.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAsSingleInstance``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0})">
+            <summary>
+                The register as singleton instance with constructor.
+            </summary>
+            <param name="constructor">
+                The constructor.
+            </param>
+            <typeparam name="TClass">
+                The type of instance.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterExternalyDisposable``1">
+            <summary>
+                Register as self disposable instance.
+                The destruction of this instance will be delegate to owner. only for specific external classes like hubs of
+                SIGNALR.
+            </summary>
+            <typeparam name="TClass">
+                The type hosted.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterExternalyDisposable``2">
+            <summary>
+                Register as self disposable instance.
+                The destruction of this instance will be delegate to owner. only for specific external classes like hubs of
+                SIGNALR.
+            </summary>
+            <typeparam name="TInterface">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TClass">
+                The type hosted.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterExternalyDisposable``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0})">
+            <summary>
+                This will register a type that will construct by a parameter constructor.
+            </summary>
+            <param name="constructor">
+                The constructor function.
+            </param>
+            <typeparam name="TClass">
+                The type to be registered.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterInstance``1(``0)">
+            <summary>
+                The register instance.
+            </summary>
+            <param name="instance">
+                The instance to be registered.
+            </param>
+            <typeparam name="T">
+                The type of instance.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterInstance``1(``0,System.String)">
+            <summary>
+            The register instance.
+            </summary>
+            <param name="instance">
+            The instance.
+            </param>
+            <param name="alias">
+            The alias.
+            </param>
+            <typeparam name="T">
+            The type to register.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterInstance``1(``0,System.Enum)">
+            <summary>
+            The register instance.
+            </summary>
+            <param name="instance">
+            The instance.
+            </param>
+            <param name="key">
+            The key to be aliases.
+            </param>
+            <typeparam name="T">
+            The type to register.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterInstance(System.Object,System.Type)">
+            <summary>
+                The register instance.
+            </summary>
+            <param name="instance">
+                The instance.
+            </param>
+            <param name="asType">
+                The as Type.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``2">
+            <summary>
+                The register per request instance.
+            </summary>
+            <typeparam name="TInterface">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``3">
+            <summary>
+                The register per request instance.
+            </summary>
+            <typeparam name="TInterface1">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TInterface2">
+                The type of interface 2.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``2(System.String)">
+            <summary>
+                The register per request instance.
+            </summary>
+            <param name="name">
+                The name to be registered as alias.
+            </param>
+            <typeparam name="TInterface">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``2(System.Enum)">
+            <summary>
+                The register per request instance with keyed.
+            </summary>
+            <param name="key">
+                The key to be registered as alias.
+            </param>
+            <typeparam name="TInterface">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``3(System.String)">
+            <summary>
+                The register per request instance.
+            </summary>
+            <param name="name">
+                The name to be registered as alias.
+            </param>
+            <typeparam name="TInterface1">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TInterface2">
+                The type of interface 2.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``3(System.Enum)">
+            <summary>
+                The register per request instance with keyed.
+            </summary>
+            <param name="key">
+                The key to be registered as alias.
+            </param>
+            <typeparam name="TInterface1">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TInterface2">
+                The type of interface 2.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of Implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``1(System.Type,System.String)">
+            <summary>
+                The register per request instance.
+            </summary>
+            <param name="type">
+                The type to be registered.
+            </param>
+            <param name="name">
+                The name of alias.
+            </param>
+            <typeparam name="T">
+                The type of base instance to register as.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``1(System.Type,System.Enum)">
+            <summary>
+                The register per request instance with keyed.
+            </summary>
+            <param name="type">
+                The type to register.
+            </param>
+            <param name="key">
+                The key to be registered as alias.
+            </param>
+            <typeparam name="T">
+                The type of interface.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0})">
+            <summary>
+                The register per request instance.
+            </summary>
+            <param name="constructor">
+                The constructor.
+            </param>
+            <typeparam name="TClass">
+                The type of interface or class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0},System.String)">
+            <summary>
+                The register per request instance.
+            </summary>
+            <param name="constructor">
+                The constructor.
+            </param>
+            <param name="name">
+                The name of alias to be registered.
+            </param>
+            <typeparam name="TClass">
+                The type of interface or class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerRequestInstance``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0},System.Enum)">
+            <summary>
+                The register per request instance with keyed.
+            </summary>
+            <param name="constructor">
+                The constructor.
+            </param>
+            <param name="key">
+                The key as alias.
+            </param>
+            <typeparam name="TClass">
+                The type of interface or class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``2">
+            <summary>
+                The register per thread instance.
+            </summary>
+            <typeparam name="TInterface">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``3">
+            <summary>
+                The register per thread instance.
+            </summary>
+            <typeparam name="TInterface1">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TInterface2">
+                The type of interface 2.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``2(System.String)">
+            <summary>
+                The register per thread instance.
+            </summary>
+            <param name="name">
+                The name of alias.
+            </param>
+            <typeparam name="TInterface">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``2(System.Enum)">
+            <summary>
+                The register per thread instance with keyed.
+            </summary>
+            <param name="key">
+                The name of alias.
+            </param>
+            <typeparam name="TInterface">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``3(System.String)">
+            <summary>
+                The register per thread instance.
+            </summary>
+            <param name="name">
+                The name of alias.
+            </param>
+            <typeparam name="TInterface1">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TInterface2">
+                The type of interface 2.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``3(System.Enum)">
+            <summary>
+                The register per thread instance with keyed.
+            </summary>
+            <param name="key">
+                The key of alias.
+            </param>
+            <typeparam name="TInterface1">
+                The type of interface.
+            </typeparam>
+            <typeparam name="TInterface2">
+                The type of interface 2.
+            </typeparam>
+            <typeparam name="TClass">
+                The type of implementation.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``1(System.Type,System.String)">
+            <summary>
+                The register per thread instance.
+            </summary>
+            <param name="type">
+                The type to register.
+            </param>
+            <param name="name">
+                The name of alias.
+            </param>
+            <typeparam name="T">
+                The type of interface.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``1(System.Type,System.Enum)">
+            <summary>
+                The register per thread instance with keyed.
+            </summary>
+            <param name="type">
+                The type to register.
+            </param>
+            <param name="key">
+                The key of alias.
+            </param>
+            <typeparam name="T">
+                The type of interface.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``1">
+            <summary>
+                The register a single class per thread.
+            </summary>
+            <typeparam name="TClass">
+                The type of class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0})">
+            <summary>
+                The register per thread instance.
+            </summary>
+            <param name="constructor">
+                The constructor.
+            </param>
+            <typeparam name="TClass">
+                The type of interface or class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0},System.String)">
+            <summary>
+                The register per thread instance.
+            </summary>
+            <param name="constructor">
+                The constructor.
+            </param>
+            <param name="name">
+                The name of alias.
+            </param>
+            <typeparam name="TClass">
+                The type of interface or class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterPerThreadInstance``1(System.Func{TASuite.Commons.Crosscutting.IIoCAbstractFactory,``0},System.Enum)">
+            <summary>
+                The register per thread instance with keyed.
+            </summary>
+            <param name="constructor">
+                The constructor.
+            </param>
+            <param name="key">
+                The key alias.
+            </param>
+            <typeparam name="TClass">
+                The type of interface or class.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterTypeAsSingleton(System.Type,System.Type[])">
+            <summary>
+                Register a type as types instances as singleton.
+            </summary>
+            <param name="type">
+                The type to register.
+            </param>
+            <param name="asTypes">
+                The type associated.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterTypeAsSingleton``1(System.Func{``0},System.Type[])">
+            <summary>
+                Register a type as types instances as singleton.
+            </summary>
+            <typeparam name="T">
+                The type of interface.
+            </typeparam>
+            <param name="factory">
+                The type to register.
+            </param>
+            <param name="asTypes">
+                The type associated.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterTypeInstancePerCall(System.Type,System.Type[])">
+            <summary>
+                Register a type as types instances per call.
+            </summary>
+            <param name="type">
+                The type to register.
+            </param>
+            <param name="asTypes">
+                The type associated.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterTypeInstancePerCall``1(System.Func{``0},System.Type[])">
+            <summary>
+                Register a type as types instances per call.
+            </summary>
+            <typeparam name="T">
+                The type of interface.
+            </typeparam>
+            <param name="factory">
+                The type to register.
+            </param>
+            <param name="asTypes">
+                The type associated.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterTypeInstancePerUnitOfWork(System.Type,System.Type[])">
+            <summary>
+                Register a type as types instances as instance per unit of works.
+            </summary>
+            <param name="type">
+                The type to register.
+            </param>
+            <param name="asTypes">
+                The type associated.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterTypeInstancePerUnitOfWork``1(System.Func{``0},System.Type[])">
+            <summary>
+                Register a type as types instances as instance per unit of works.
+            </summary>
+            <typeparam name="T">
+                The type of interface.
+            </typeparam>
+            <param name="factory">
+                The type to register.
+            </param>
+            <param name="asTypes">
+                The type associated.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.UpdateContainer(TASuite.Commons.Crosscutting.IIoCContainer)">
+            <summary>
+                Update container with new definitions.
+            </summary>
+            <param name="container">
+                Target container.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IBuilder.RegisterAllImplementationOf``1">
+            <summary>
+            The register all implementation of type T.
+            </summary>
+            <typeparam name="T">
+            Type base to register and could be interface. 
+            </typeparam>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IDependencyBootstrapper">
+            <summary>
+            The DependencyBootstrapper interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IDependencyBootstrapper.Initialize">
+            <summary>
+            The initialize.
+            </summary>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.IIoCContainer"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IDependencyBootstrapper.InitializeWithLastRegistrationAction(System.Action{TASuite.Commons.Crosscutting.IBuilder})">
+            <summary>
+            Define a initialization with las step action.
+            </summary>
+            <param name="lastRegistrationAction">
+            This action will called as a last step of registration.
+            </param>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.IIoCContainer"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IDependencyBootstrapper.GetBuilder">
+            <summary>
+            Get implementation for builder.
+            </summary>
+            <returns>
+            Builder <see cref="T:TASuite.Commons.Crosscutting.IBuilder"/>
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IIoCAbstractFactory">
+            <summary>
+            Define a contract to use inside classes to create objects.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IIoCAbstractFactory.IsRoot">
+            <summary>
+            Gets if container is root element.
+            </summary>
+            <value>
+            The is root.
+            </value>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.Resolve``1(TASuite.Commons.Crosscutting.IoCRuntimeParameter[])">
+            <summary>
+            Resolve instance of type T.
+            </summary>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="T">
+            The type to be resolved.
+            </typeparam>
+            <returns>
+            Return instance of T.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.Resolve``1(System.String,TASuite.Commons.Crosscutting.IoCRuntimeParameter[])">
+            <summary>
+            Resolve instance of type T with alias.
+            </summary>
+            <param name="alias">
+            The alias.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="T">
+            The type to be resolved.
+            </typeparam>
+            <returns>
+            Return instance of T.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.Resolve``1(System.Enum,TASuite.Commons.Crosscutting.IoCRuntimeParameter[])">
+            <summary>
+            Resolve instance of type T with keyed registration.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="T">
+            The type to be resolved.
+            </typeparam>
+            <returns>
+            Return instance of T.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.ResolveAll``1">
+            <summary>
+            Resolve all instance of type T.
+            </summary>
+            <typeparam name="T">
+            The type to be resolved.
+            </typeparam>
+            <returns>
+            Return instances of T.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.Resolve(System.Type,TASuite.Commons.Crosscutting.IoCRuntimeParameter[])">
+            <summary>
+            Resolve instance of type.
+            </summary>
+            <param name="type">
+            Type to resolve.
+            </param>
+            <param name="parameters">
+            </param>
+            <returns>
+            Instance of type.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.ResolveAll(System.Type)">
+            <summary>
+            Resolve all instance of type.
+            </summary>
+            <param name="type">
+            Type to resolve.
+            </param>
+            <returns>
+            Instance of type.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.Resolve(System.Type,System.String,TASuite.Commons.Crosscutting.IoCRuntimeParameter[])">
+            <summary>
+            Resolve instance of type with alias.
+            </summary>
+            <param name="type">
+            Type to resolve.
+            </param>
+            <param name="alias">
+            Alias to resolve.
+            </param>
+            <param name="parameters">
+            </param>
+            <returns>
+            Instance of type.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.Resolve(System.Type,System.Enum,TASuite.Commons.Crosscutting.IoCRuntimeParameter[])">
+            <summary>
+            Resolve instance of type with keyed registration.
+            </summary>
+            <param name="type">
+            Type to resolve.
+            </param>
+            <param name="key">
+            Alias to resolve.
+            </param>
+            <param name="parameters">
+            </param>
+            <returns>
+            Instance of type.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.IsRegistered(System.Type)">
+            <summary>
+            Verify if type is registered.
+            </summary>
+            <param name="type">
+            Type to verify.
+            </param>
+            <returns>
+            True if is registeres, false otherwise.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.IsRegistered(System.Type,System.String)">
+            <summary>
+            Verify if type is registered with alias.
+            </summary>
+            <param name="type">
+            Type to verify.
+            </param>
+            <param name="alias">
+            The alias.
+            </param>
+            <returns>
+            True if is registeres, false otherwise.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.IsRegistered(System.Type,System.Enum)">
+            <summary>
+            Verify if type is registered with keyed registration.
+            </summary>
+            <param name="type">
+            Type to verify.
+            </param>
+            <param name="key">
+            The key.
+            </param>
+            <returns>
+            True if is registeres, false otherwise.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.IsRegistered``1">
+            <summary>
+            Verify if type is registered.
+            </summary>
+            <typeparam name="T">
+            The type.
+            </typeparam>
+            <returns>
+            True if is registeres, false otherwise.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.IsRegistered``1(System.String)">
+            <summary>
+            Verify if type is registered with alias.
+            </summary>
+            <param name="alias">
+            The alias.
+            </param>
+            <typeparam name="T">
+            The type.
+            </typeparam>
+            <returns>
+            True if is registeres, false otherwise.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.IsRegistered``1(System.Enum)">
+            <summary>
+            Verify if type is registered with keyed registration.
+            </summary>
+            <param name="key">
+            The alias.
+            </param>
+            <typeparam name="T">
+            The type.
+            </typeparam>
+            <returns>
+            True if is registeres, false otherwise.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.TryResolve(System.Type)">
+            <summary>
+            The try resolve.
+            </summary>
+            <param name="serviceType">
+            The service type.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.TryResolve``1">
+            <summary>
+            The try resolve a type or null if not registers.
+            </summary>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCAbstractFactory.RehydrateIoCDependenciesProperties``1(``0)">
+            <summary>
+            This method will refill all properties with <see cref="T:TASuite.Commons.Crosscutting.IoCDependencyAttribute"/>.
+            </summary>
+            <param name="instance">
+                Instance with pending resolutions.
+            </param>
+            <typeparam name="T">
+            Type of instance.
+            </typeparam>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IIoCContainer">
+            <summary>
+            The IoCContainer interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCContainer.CreateChildContainer">
+            <summary>
+            The create child container.
+            </summary>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.IIoCContainer"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCContainer.IsRegisteredAsComponent(System.Type)">
+            <summary>
+            Verify if component is registered in some way as a company.
+            </summary>
+            <param name="component">
+            Component to verify.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCContainer.ConfigureProperty(System.Type,System.String,System.Object)">
+            <summary>
+            Implemente property value to inject instance for a type.
+            </summary>
+            <param name="component">
+            Type of compoment on wich register instace
+            </param>
+            <param name="property">
+            Property name.
+            </param>
+            <param name="value">
+            Instance value.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCContainer.ReleaseObject(System.Object)">
+            <summary>
+            Release instance of object.
+            </summary>
+            <param name="instance"></param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IIoCRegister">
+            <summary>
+            The IoCRegister interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IIoCRegister.RegisterDependencies(TASuite.Commons.Crosscutting.IBuilder)">
+            <summary>
+            The register dependencies.
+            </summary>
+            <param name="builder">
+            The builder.
+            </param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IoCBootstrapperFactory">
+            <summary>
+            The IoC bootstrapper factory do a creation of specific bootstrapper for first found <see cref="T:TASuite.Commons.Crosscutting.IDependencyBootstrapper" /> implementations.
+            </summary>    
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCBootstrapperFactory.Create">
+            <summary>
+            The create.
+            </summary>
+            <returns>
+            Returns instance of T.
+            The dependency boot strapper demanded type. 
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IoCExtension">
+            <summary>
+            The io c extension.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCExtension.RegisterAllFromBaseTypeAsSelf``1(TASuite.Commons.Crosscutting.IBuilder,System.Reflection.Assembly[])">
+            <summary>
+            The register all from base type as self.
+            </summary>
+            <param name="builder">
+            The builder.
+            </param>
+            <param name="fromAssemblies">
+            The from assemblies.
+            </param>
+            <typeparam name="TBase">
+            The type base.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCExtension.RegisterAssemblyTypes``1(TASuite.Commons.Crosscutting.IBuilder,System.Reflection.Assembly[])">
+            <summary>
+            The register assembly types.
+            </summary>
+            <param name="builder">
+            The builder.
+            </param>
+            <param name="fromAssemblies">
+            The from assemblies.
+            </param>
+            <typeparam name="TBase">
+            The type base.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCExtension.RegisterAssemblyTypesAsSingleton``1(TASuite.Commons.Crosscutting.IBuilder,System.Reflection.Assembly[])">
+            <summary>
+            The register assembly types as singleton.
+            </summary>
+            <param name="builder">
+            The builder.
+            </param>
+            <param name="fromAssemblies">
+            The from assemblies.
+            </param>
+            <typeparam name="TBase">
+            The type base.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCExtension.RegisterIoCBootstrappersfromApplicationDomain(TASuite.Commons.Crosscutting.IBuilder,System.AppDomain)">
+            <summary>
+            The register IoC bootstrappers from application domain.
+            </summary>
+            <param name="builder">
+            The builder.
+            </param>
+            <param name="appDomain">
+            The app domain.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCExtension.RegisterIoCBootstrappersfromAssemblies(TASuite.Commons.Crosscutting.IBuilder,System.String[])">
+            <summary>
+            The register IoC bootstrappers from assemblies.
+            </summary>
+            <param name="builder">
+            The builder.
+            </param>
+            <param name="assemblyNames">
+            The assembly names.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCExtension.RegisterIoCBootstrappersfromAssemblies(TASuite.Commons.Crosscutting.IBuilder,System.Reflection.Assembly[])">
+            <summary>
+            The register IoC bootstrappers from assemblies.
+            </summary>
+            <param name="builder">
+            The builder.
+            </param>
+            <param name="assemblies">
+            The assemblies.
+            </param>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IoCDependencyAttribute">
+            <summary>
+            Inject IoC instance on a property.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCDependencyAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.IoCDependencyAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCDependencyAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.IoCDependencyAttribute"/> class.
+            </summary>
+            <param name="withAlias">
+            The with Alias.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCDependencyAttribute.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.IoCDependencyAttribute"/> class.
+            </summary>
+            <param name="withKey">
+            The with key.
+            </param>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IoCDependencyAttribute.Alias">
+            <summary>
+            Gets or sets a alias for resolutions of instance.
+            </summary>
+            <value>
+            The alias.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IoCDependencyAttribute.DisableThrowExceptions">
+            <summary>
+            Gets or sets when throw a exception when Factory could not found instance in container.
+            </summary>
+            <value>
+            The disable throw exceptions.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IoCDependencyAttribute.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>
+            The key.
+            </value>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCDependencyAttribute.Validate(System.Reflection.PropertyInfo)">
+            <summary>
+            Method invoked at build time to ensure that the aspect has been applied to the right target.
+            </summary>
+            <param name="locationInfo">
+            Location to which the aspect has been applied.
+            </param>
+            <returns>
+            <c>true</c> if the aspect was applied to an acceptable field, otherwise
+                <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ISelfOwnerDisposable`1">
+            <summary>
+            This will be resolved as self lifetime scope and that means YOU are responsible for disposal.
+            </summary>
+            <typeparam name="T">
+            The type hosted
+            </typeparam>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.ISelfOwnerDisposable`1.Instance">
+            <summary>
+            Gets hosted instance.
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IoCRuntimeParameter">
+            <summary>
+            The io c runtime parameter.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IoCRuntimeParameter.#ctor(System.Linq.Expressions.Expression{System.Func{System.Reflection.ParameterInfo,System.Boolean}},System.Func{System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.IoCRuntimeParameter"/> class.
+            </summary>
+            <param name="parameterResolucionFilter">
+            The parameter resolucion filter.
+            </param>
+            <param name="valueProvider">
+            The value provider.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            </exception>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IoCRuntimeParameter.ParameterResolucionFilter">
+            <summary>
+            Gets the parameter resolucion filter. This will match parameter with value provider
+            </summary>
+            <value>
+            The parameter resolucion filter.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IoCRuntimeParameter.ValueProvider">
+            <summary>
+            Gets the value provider. Function to get value.
+            </summary>
+            <value>
+            The value provider.
+            </value>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.AnonDisposable">
+            <summary>
+            Represents an Action-based disposable. Taked from RX remove if it is used
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AnonDisposable.#ctor(System.Action)">
+            <summary>
+            Constructs a new disposable with the given action used for disposal.
+            </summary>
+            <param name="dispose">Disposal action which will be run upon calling Dispose.</param>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.AnonDisposable.IsDisposed">
+            <summary>
+            Gets a value that indicates whether the object is disposed.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AnonDisposable.Dispose">
+            <summary>
+            Calls the disposal action if and only if the current instance hasn't been disposed yet.
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ApplicationCrossCuttingWarmup">
+            <summary>
+            The application cross cutting warm up.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ApplicationCrossCuttingWarmup.WarmUp(TASuite.Commons.Crosscutting.IIoCContainer)">
+            <summary>
+            The warm up.
+            </summary>
+            <param name="container">
+            The container.
+            </param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.AssemblyNavigator">
+            <summary>
+            The assembly navigator.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AssemblyNavigator.#ctor(System.Reflection.Assembly)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.AssemblyNavigator"/> class.
+            </summary>
+            <param name="assembly">
+            The assembly.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AssemblyNavigator.#ctor(System.Reflection.Assembly[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.AssemblyNavigator"/> class.
+            </summary>
+            <param name="assemblies">
+            The assemblies.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AssemblyNavigator.#ctor(System.AppDomain)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.AssemblyNavigator"/> class.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AssemblyNavigator.Implementing``1">
+            <summary>
+            The implementing.
+            </summary>
+            <typeparam name="T">
+            Searching type.
+            </typeparam>
+            <returns>
+            The
+                <see>
+                    <cref>TypeCollection</cref>
+                </see>
+                of T.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AssemblyNavigator.InterfacesImplementing``1">
+            <summary>
+            The interfaces implementing.
+            </summary>
+            <typeparam name="T">
+            The type to search.
+            </typeparam>
+            <returns>
+            The <see>
+                    <cref>TypeCollection</cref>
+                </see>
+                of T.
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.CollectionExtraExtensions">
+            <summary>
+            The enumerable extra extensions.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CollectionExtraExtensions.ConvertStringArrayToString(System.String[],System.String)">
+            <summary>
+            The convert string array to string.
+            </summary>
+            <param name="array">
+            The array.
+            </param>
+            <param name="delimiter">
+            The Delimiter.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CollectionExtraExtensions.ExecuteActionOverCollection``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            The execute action over collection.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <param name="action">
+            The action.
+            </param>
+            <typeparam name="T">
+            The type of collections.
+            </typeparam>
+            <returns>
+            The
+                <see>
+                    <cref>IEnumerable</cref>
+                </see>
+                of T.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CollectionExtraExtensions.ExecuteParallelActionOverCollection``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            The execute parallel action over collection.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <param name="action">
+            The action.
+            </param>
+            <typeparam name="T">
+            The type of object.
+            </typeparam>
+            <returns>
+            The
+                <see>
+                    <cref>IEnumerable</cref>
+                </see>
+                of T.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The control of null parameters.
+            </exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CollectionExtraExtensions.ExecuteParallelActionOverCollection``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0},System.Threading.CancellationToken)">
+            <summary>
+            The execute parallel action over collection.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <param name="action">
+            The action.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <typeparam name="T">
+            The type of object.
+            </typeparam>
+            <returns>
+            The
+                <see>
+                    <cref>IEnumerable</cref>
+                </see>
+                of T.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The control of null parameters.
+            </exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.CollectionExtraExtensions.GetDynamicObjectFromHashtable(System.Collections.Hashtable)">
+            <summary>
+            The get dynamic object from hash table.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <returns>
+            The
+                <see>
+                    <cref>Dynamic</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.DisposableTool">
+            <summary>
+            Create a disposable action based object
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.DisposableTool.Create(System.Action)">
+            <summary>
+            Creates a disposable object that invokes the specified action when disposed.
+            </summary>
+            <param name="dispose">Action to run during the first call to <see cref="M:System.IDisposable.Dispose"/>. The action is guaranteed to be run at most once.</param>
+            <returns>The disposable object that runs the given action upon disposal.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dispose"/> is null.</exception>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.FindTypes">
+            <summary>
+            The find types.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.FindTypes.InAssemblies(System.Reflection.Assembly[])">
+            <summary>
+            The in assemblies.
+            </summary>
+            <param name="assemblies">
+            The assemblies.
+            </param>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.AssemblyNavigator"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.FindTypes.InAssembly(System.Reflection.Assembly)">
+            <summary>
+            The in assembly.
+            </summary>
+            <param name="assembly">
+            The assembly.
+            </param>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.AssemblyNavigator"/> .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.FindTypes.InDomain(System.AppDomain)">
+            <summary>
+            The in domain.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.AssemblyNavigator"/>.
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ICancelable">
+            <summary>
+            Disposable resource with dipsosal state tracking.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.ICancelable.IsDisposed">
+            <summary>
+            Gets a value that indicates whether the object is disposed.
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ICloneService">
+            <summary>
+            Service to clone objects. 
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ICloneService.CloneInstance``1(``0)">
+            <summary>
+            Clone a instance.
+            </summary>
+            <param name="subject">
+            Element to clone.
+            </param>
+            <typeparam name="T">
+            The type to be cloned.
+            </typeparam>
+            <returns>
+            A copy of object.
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IMultiprocessInstantMessageProvider">
+            <summary>
+            The multi-process instant message provider interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IMultiprocessInstantMessageProvider.SubscribeAsync``1(System.String,System.Func{``0,System.Threading.Tasks.Task})">
+            <summary>
+            The subscribe async to specific topic.
+            </summary>
+            <param name="topic">
+                The topic.
+            </param>
+            <param name="handler">
+                The handler.
+            </param>
+            <typeparam name="T">
+            The type of message context.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IMultiprocessInstantMessageProvider.PublishAsync``1(System.String,``0)">
+            <summary>
+            The publish async a message to specific topic.
+            </summary>
+            <param name="topic">
+            The topic.
+            </param>
+            <param name="message">
+            The message.
+            </param>
+            <typeparam name="T">
+            The type of message.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IPartTransformationBuilder`3">
+            <summary>
+            The PartTransformationBuilder interface.
+            </summary>
+            <typeparam name="TTransformationSubject">
+            The transformation subject type.
+            </typeparam>
+            <typeparam name="TBaseTypeAppliedSource">
+            The base to apply polimorphic.
+            </typeparam>
+            <typeparam name="TTypeAppliedSource">
+            The current process type.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IPartTransformationBuilder`3.Do(System.Action{`0,`2})">
+            <summary>
+            The do sync for commons procedures.
+            </summary>
+            <param name="actionToDo">
+            The action to do.
+            </param>
+            <returns>
+            The <see>
+                    <cref>ISequentialTransformationBuilder</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IPartTransformationBuilder`3.DoAsync(System.Func{`0,`2,System.Threading.Tasks.Task})">
+            <summary>
+            The do async.
+            </summary>
+            <param name="actionToDo">
+                The action to do async.
+            </param>
+            <returns>
+            The <see>
+                    <cref>ISequentialTransformationBuilder</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ISequentialTransformation`2">
+            <summary>
+            Apply transformation on some subject object from sequential object.
+            </summary>
+            <typeparam name="TTransformationSubject">
+            The type subject over witch take actions.
+            </typeparam>
+            <typeparam name="TBaseTypeAppliedSource">
+            The base type of actions over subject.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISequentialTransformation`2.ApplyTransformationsOnInstance(`0,System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            Apply transformation on instance of subject object from sequential object.
+            </summary>
+            <param name="subject">
+            Instance to be transform. 
+            </param>
+            <param name="changesToApply">
+            Sequence of instances.
+            </param>
+            <returns>
+            The transformed object.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISequentialTransformation`2.ApplyTransformationsOnInstanceAsync(`0,System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            Apply transformation on instance of subject object from sequential object.
+            </summary>
+            <param name="subject">
+            Instance to be transform. 
+            </param>
+            <param name="changesToApply">
+            Sequence of instances.
+            </param>
+            <returns>
+            The transformed object.
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ISequentialTransformationBuilder`2">
+            <summary>
+            The SequentialTransformationBuilder interface.
+            </summary>
+            <typeparam name="TTransformationSubject">
+            </typeparam>
+            <typeparam name="TBaseTypeAppliedSource">
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISequentialTransformationBuilder`2.OnReceived``1">
+            <summary>
+            The on received.
+            </summary>
+            <typeparam name="T">
+            </typeparam>
+            <returns>
+            The <see>
+                    <cref>IPartTransformationBuilder</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISequentialTransformationBuilder`2.Build">
+            <summary>
+            The build.
+            </summary>
+            <returns>
+            The <see>
+                    <cref>ISequentialTransformation</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ISerializationService">
+            <summary>
+            Define a serialization service.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISerializationService.DeserializeJson``1(System.String)">
+            <summary>
+            Deserialize to type of T parameter from string JSON representation. 
+            </summary>
+            <typeparam name="T">
+            The target type.
+            </typeparam>
+            <param name="jsonContext">
+            The JSON body.
+            </param>
+            <returns>
+            The instance of type T.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISerializationService.DeserializeJson(System.String,System.Type)">
+            <summary>
+            Deserialize from JSON forcing a type.
+            </summary>
+            <param name="jsonContext">
+            JSON representation.
+            </param>
+            <param name="type">
+            The target type.
+            </param>
+            <returns>
+            The instance.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISerializationService.SerializeToJson``1(``0)">
+            <summary>
+            Serialize a object to it JSON string representation.
+            </summary>
+            <param name="subject">
+            The object instance to serialize.
+            </param>
+            <typeparam name="T">
+            The type to serialize.
+            </typeparam>
+            <returns>
+            The JSON string representation.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISerializationService.MergeFromDictionaryWithSerialization``1(``0,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Merge a dictionary of changes from a serialized dictionary.
+            </summary>
+            <param name="subject">
+            The subject target of merge.
+            </param>
+            <param name="dictionaryProperties">
+            The dictionary to merge from.
+            </param>
+            <typeparam name="T">
+            The root type.
+            </typeparam>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IWarmableObject">
+            <summary>
+            The Warm Up Object interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IWarmableObject.WarmUpAsync">
+            <summary>
+            The warm up a cache async.
+            </summary>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/> .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ReflectionExtensions">
+            <summary>
+            The reflection extensions.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetAttributeOfType``1(System.Type)">
+            <summary>
+            The get attribute of type.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <typeparam name="T">
+            The type of attribute.
+            </typeparam>
+            <returns>
+            Returns instance of T.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetAttributesOfType``1(System.Type)">
+            <summary>
+            The get attribute of types.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <typeparam name="T">
+            The type of attribute.
+            </typeparam>
+            <returns>
+            The
+                <see>
+                    <cref>T[]</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetDefault(System.Type)">
+            <summary>
+            The get default.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <returns>
+            The default value.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetFullTypeName(System.Type)">
+            <summary>
+            The get full type name with format $"{source.FullName}, {source.Assembly.GetName().Name}".
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetInstancesInGraphOfType``1(System.Object,System.Boolean)">
+            <summary>
+            The get list of instance in graph of specific type.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <param name="onlyFirstLevel">
+            The only First Level.
+            </param>
+            <typeparam name="T">
+            The type to search.
+            </typeparam>
+            <returns>
+            The
+                <see>
+                    <cref>IEnumerable</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetPropertiesAttributesOfType``1(System.Type)">
+            <summary>
+            The get properties attributes of type.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <typeparam name="T">
+            The type of attribute.
+            </typeparam>
+            <returns>
+            The
+                <see>
+                    <cref>IEnumerable</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetPropertyName``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            The get property name.
+            </summary>
+            <param name="propertyExpression">
+            The property expression.
+            </param>
+            <typeparam name="T">
+            The type to parse.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.String"/>Property Name.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            PropertyExpression is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Invalid argument. PropertyExpression.
+            </exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetPropertyName``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            The get property name.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <param name="propertyExpression">
+            The property expression.
+            </param>
+            <typeparam name="TSourceType">
+            The source type.
+            </typeparam>
+            <typeparam name="TResult">
+            The result property type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The expression could not be null.
+            </exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetPropertyNameFullPath``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            The get property name full path.
+            </summary>
+            <param name="subject">
+            The subject.
+            </param>
+            <param name="propertyExpression">
+            The property expression.
+            </param>
+            <typeparam name="TSourceType">
+            The entity type.
+            </typeparam>
+            <typeparam name="TResult">
+            The returned property type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The expression could not be null.
+            </exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.IsLoadedAssemblyInDomain(System.AppDomain,System.String)">
+            <summary>
+            The is loaded assembly in domain.
+            </summary>
+            <param name="domain">
+            The domain to verify if loaded.
+            </param>
+            <param name="assemblyPath">
+            The assembly path.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/> .
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            All arguments cannot be null.
+            </exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.LoadAssemblyInDomain(System.AppDomain,System.String)">
+            <summary>
+            Load assembly in domain in secure mode.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <param name="assemblyPath">
+            The assembly path.
+            </param>
+            <returns>
+            The <see cref="T:System.Reflection.Assembly"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The assembly path and domain can be valid.
+            </exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.TrySafeToGetPropertyValue``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},``1)">
+            <summary>
+            The try save to get property value.
+            </summary>
+            <param name="subject">
+            The subject.
+            </param>
+            <param name="propertyExpression">
+            The property expression.
+            </param>
+            <param name="defaultValue">
+            The default value.
+            </param>
+            <typeparam name="TSourceType">
+            Type of object implicated.
+            </typeparam>
+            <typeparam name="TResult">
+            The type of expected result.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The expression must be valid.
+            </exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.PreloadUnusedAssemblies(System.AppDomain)">
+            <summary>
+            Load all than assemblies than is not loaded with runtime compiler. This prevent all problems in uncoupled architecture.
+            </summary>
+            <param name="appDomain">
+            The domain to search.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.ToMD5Hash(System.String)">
+            <summary>
+            Create a MD5 hash key, this is used to compare if string has the same signature.
+            </summary>
+            <param name="source">
+            The string to convert.
+            </param>
+            <returns>
+            Return a string with hexadecimal representation.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.MergeFromDictionary``1(``0,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Merge a dictionary of Key (property name) and value into a subject.
+            </summary>
+            <param name="subject">
+            A subject to be Full filled.
+            </param>
+            <param name="dictionaryProperties">
+            The list of properties.
+            </param>
+            <typeparam name="T">
+            The subject type.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.MergeFromInstanceWithSamePropertyNames``2(``0,``1,System.Action{``0,``1})">
+            <summary>
+            Merge from a instance with same properties name into a subject.
+            </summary>
+            <param name="subject">
+            A subject to be Full filled.
+            </param>
+            <param name="source">
+            The source where from will fill a subject.
+            </param>
+            <param name="afterMappingAction">
+            This is optional action to be executed after mapping process will executed.
+            </param>
+            <typeparam name="TSubject">
+            The subject type.
+            </typeparam>
+            The type of sourced.
+            <typeparam name="TSource">
+            The source to merge.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetTopLevelInterfaces(System.Type)">
+            <summary>
+            Get a top level implemented interfaces.
+            </summary>
+            <param name="type">
+            A type to get interfaces.
+            </param>
+            <returns>
+            Return a list of interfaces.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ReflectionExtensions.GetTypeByFullTypeName(System.AppDomain,System.String)">
+            <summary>
+            Search type by a name.
+            </summary>
+            <param name="domain">
+            The application domain where search.
+            </param>
+            <param name="fullTypeName">
+            The full name of type.
+            </param>
+            <returns>
+            The all found types.
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.SequentialTransformationBuilder`2">
+            <summary>
+            The sequential transformation builder.
+            </summary>
+            <typeparam name="TTransformationSubject">
+            </typeparam>
+            <typeparam name="TBaseTypeAppliedSource">
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.SequentialTransformationBuilder`2.Finalize">
+            <summary>
+            Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.SequentialTransformationBuilder`2.OnReceived``1">
+            <summary>
+            The on received.
+            </summary>
+            <typeparam name="T">
+            </typeparam>
+            <returns>
+            The <see>
+                    <cref>IPartTransformationBuilder</cref>
+                </see>
+                .
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            </exception>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.SequentialTransformationBuilder`2.Build">
+            <summary>
+            The build.
+            </summary>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.ISequentialTransformation`2"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.SequentialTransformationBuilder`2.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.SequentialTransformationBuilder`2.Begin">
+            <summary>
+            The begin.
+            </summary>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.ISequentialTransformationBuilder`2"/>.
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.TypeCollection`1">
+            <summary>
+            The list of type.
+            </summary>
+            <typeparam name="T">
+            Type included.
+            </typeparam>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.TypeCollection`1.#ctor(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.TypeCollection`1"/> class.
+            </summary>
+            <param name="listOfTypes">
+            The list of types.
+            </param>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.TypeCollection`1.ListOfTypes">
+            <summary>
+            Gets the list of types.
+            </summary>
+            <value>
+            The list of types.
+            </value>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.TypeCollection`1.Execute(System.Action{`0})">
+            <summary>
+            The execute.
+            </summary>
+            <param name="action">
+            The action.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.TypeCollection`1.GetAllInstances">
+            <summary>
+            The get all instances.
+            </summary>
+            <returns>
+            The
+                <see>
+                    <cref>IEnumerable</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.TypeCollection`1.GetAllInstancesFromIoC(System.IServiceProvider)">
+            <summary>
+            The get all instances from io c.
+            </summary>
+            <param name="provider">
+            The provider to get service implementations.
+            </param>
+            <returns>
+            The
+                <see>
+                    <cref>IEnumerable</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.TypeCollection`1.GetInstancesAndExecuteAction(System.Action{`0})">
+            <summary>
+            The get instances and execute action.
+            </summary>
+            <param name="action">
+            The action.
+            </param>
+            <returns>
+            The
+                <see>
+                    <cref>IEnumerable</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.TypeCollection`1.GetInstancesFromIoCAndExecuteAction(System.Action{`0},System.IServiceProvider)">
+            <summary>
+            The get instances from IoC and DI container and execute action.
+            </summary>
+            <param name="action">
+            The action.
+            </param>
+            <param name="provider">
+            The provider.
+            </param>
+            <returns>
+            The
+                <see>
+                    <cref>IEnumerable</cref>
+                </see>
+                .
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.AuthorizationService">
+            <summary>
+            The AuthorizationService implementation.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.AuthorizationService.DefaultTimeToRefreshBeforeExpiration">
+            <summary>
+            Default Time To Refresh Before Expiration.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.AuthorizationService.TimeToRefreshBeforeExpiration">
+            <summary>
+            Time To Refresh Before Expiration.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.#ctor(TASuite.Commons.Crosscutting.IDataAccessService,TASuite.Commons.Crosscutting.IFeatureService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.AuthorizationService"/> class.
+            </summary>
+            <param name="dataAccessService">
+            The data access service.
+            </param>
+            <param name="featureService">
+            The data feature service.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.Finalize">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetTenant">
+            <summary>
+            The get tenant.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetUserCulture">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetUserName">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetUserFullName">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetUserMail">
+            <summary>
+            The get user mail.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetExpirationTime">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetModules">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.IsValidModule(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetContext">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetContext(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetClientId">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.SetClientId(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetDataAccessEntityAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetFeatureEntityAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.GetUserCorrelationId">
+            <summary>
+            The get UserCorrelationId.
+            </summary>
+            <returns>role name</returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.AuthorizationService.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ClaimsIdentityProvider">
+            <summary>
+                Create Claims Identity base.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ClaimsIdentityProvider.Create(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+                Create ClaimsIdentity with parameters.
+            </summary>
+            <param name="givenName">Given name user.</param>
+            <param name="tenant">Tenant identifier.</param>
+            <param name="culture">Culture name (es-ES, en-GB).</param>
+            <param name="email">Email user.</param>
+            <param name="modules">Modules for access.</param>
+            <param name="userCorrelationId">userCorrelationId.</param>
+            <returns>The claims identity.</returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.DataAccessEntity">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.DataAccessEntity.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TASuite.Commons.Crosscutting.DataAccessEntity"/> class.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.DataAccessEntity.DataAccessUnits">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.DataAccessUnit">
+            <summary>
+            The data access unit.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.DataAccessUnit.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.DataAccessUnit.TenantId">
+            <inheritdoc />
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.DataAccessUnit.HasFullAccess">
+            <inheritdoc />
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.DataAccessUnit.IncludedLegalEntities">
+            <inheritdoc />
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.DataAccessUnit.ExcludedLegalEntities">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IDataAccessEntity">
+            <summary>
+            The DataAccessEntity interface.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IDataAccessEntity.DataAccessUnits">
+            <summary>
+            Gets or sets the data access units.
+            </summary>
+            <value>
+            The data access units.
+            </value>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IDataAccessUnit">
+            <summary>
+            The DataAccessUnit interface.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IDataAccessUnit.TenantId">
+            <summary>
+            Gets or sets the tenant id.
+            </summary>
+            <value>
+            The tenant id.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IDataAccessUnit.HasFullAccess">
+            <summary>
+            Gets or sets a value indicating whether has full access.
+            </summary>
+            <value>
+            The has full access.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IDataAccessUnit.IncludedLegalEntities">
+            <summary>
+            Gets or sets the included list of legal entities.
+            </summary>
+            <value>
+            The include.
+            </value>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IDataAccessUnit.ExcludedLegalEntities">
+            <summary>
+            Gets or sets the excluded list of legal entities.
+            </summary>
+            <value>
+            The exclude.
+            </value>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.FeatureEntity">
+            <inheritdoc />
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.FeatureEntity.FeatureId">
+            <inheritdoc />
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.FeatureEntity.HasAccess">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IFeatureEntity">
+            <summary>
+            The FeatureEntity interface.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IFeatureEntity.FeatureId">
+            <summary>
+            Gets or sets the feature identifier.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IFeatureEntity.HasAccess">
+            <summary>
+            Gets or sets the not access boolean.
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IToken">
+            <summary>
+            The Token interface.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IToken.UserId">
+            <summary>
+            Gets or sets the user identifier.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IToken.TenantId">
+            <summary>
+            Gets or sets the tenant identifier.
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.Token">
+            <inheritdoc />
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.Token.UserId">
+            <inheritdoc />
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.Token.TenantId">
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IDataAccessService">
+            <summary>
+            The DataAccessService interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IDataAccessService.GetDataAccessEntityAsync(TASuite.Commons.Crosscutting.IToken)">
+            <summary>
+            The get data access entity than define a data access to partition.
+            </summary>
+            <param name="token">
+            The <see cref="T:TASuite.Commons.Crosscutting.IToken"/>.
+            </param>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.IDataAccessEntity"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.FakeDataAccessService.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.FakeDataAccessService.GetDataAccessEntityAsync(TASuite.Commons.Crosscutting.IToken)">
+            <param name="token">
+            The <see cref="T:TASuite.Commons.Crosscutting.IToken"/>.
+            </param>
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IFeatureService">
+            <summary>
+            The FeatureService interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IFeatureService.GetFeatureEntityAsync(TASuite.Commons.Crosscutting.IToken)">
+            <summary>
+            The get data access entity than define a data access to partition.
+            </summary>
+            <param name="token">
+            The <see cref="T:TASuite.Commons.Crosscutting.IToken"/>.
+            </param>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.IFeatureEntity"/> list.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.FakeFeatureService.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.FakeFeatureService.GetFeatureEntityAsync(TASuite.Commons.Crosscutting.IToken)">
+            <param name="token"></param>
+            <inheritdoc />
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.PartitionTypes">
+            <summary>
+            Partitions key names
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.PartitionTypes.ClientId">
+            <summary>
+            client id
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.PartitionTypes.NoneValue">
+            <summary>
+            value none
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.WkClaimTypes">
+            <summary>
+            The Claim Types.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.GivenName">
+            <summary>
+            Given Name.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.EMail">
+            <summary>
+            Users mail.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.Tenant">
+            <summary>
+            User's Tenant.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.Language">
+            <summary>
+            User's Language.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.ExpiresAt">
+            <summary>
+            Session Expiration Date.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.AccessToken">
+            <summary>
+            Access token.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.RefreshToken">
+            <summary>
+            Refresh token.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.IdToken">
+            <summary>
+            Identity token.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.Modules">
+            <summary>
+            Module token.
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.keyUserCorrelationId">
+            <summary>
+            Identification user 
+            </summary>
+        </member>
+        <member name="F:TASuite.Commons.Crosscutting.WkClaimTypes.Context">
+            <summary>
+            Context user header.
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IAuthenticationService">
+            <summary>
+            The AuthenticationService interface.
+            </summary>
+        </member>
+        <member name="P:TASuite.Commons.Crosscutting.IAuthenticationService.Principal">
+            <summary>
+            Gets the principal.
+            </summary>
+            <value>
+            The principal.
+            </value>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthenticationService.Login(System.String,System.String)">
+            <summary>
+            The login.
+            </summary>
+            <param name="userName">
+            The user name.
+            </param>
+            <param name="password">
+            The password.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthenticationService.Logout">
+            <summary>
+            The logout.
+            </summary>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.IAuthorizationService">
+            <summary>
+            The AuthorizationService interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetClientId">
+            <summary>
+            The get client id.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/> of client id representations.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetContext">
+            <summary>
+            The get context.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/> of client id representations.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetContext(System.String)">
+            <summary>
+            The get context.
+            </summary>
+            <param name="key">
+            The key name.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/> of client id representations.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetExpirationTime">
+            <summary>
+            Get the session expiration time in milliseconds.
+            </summary>
+            <returns>
+            The <see cref="T:System.Int32"/> of expiration time in milliseconds.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetModules">
+            <summary>
+            Get the modules.
+            </summary>
+            <returns>
+            The user access modules.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetTenant">
+            <summary>
+            The get tenant.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetUserCulture">
+            <summary>
+            Get the <see cref="T:System.Globalization.CultureInfo">User culture information</see>.
+            </summary>
+            <returns>
+            Current culture.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetUserFullName">
+            <summary>
+            The get full user name.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetUserName">
+            <summary>
+            The get user name.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetUserCorrelationId">
+            <summary>
+            The get UserCorrelationId.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/> of UserCorrelationId representations.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.IsValidModule(System.String)">
+            <summary>
+            Checks if a module is a valid module for the current user.
+            </summary>
+            <param name="module">
+            Module name.
+            </param>
+            <returns>
+            True if is valid.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.SetClientId(System.String)">
+            <summary>
+            The set client id.
+            </summary>
+            <param name="value">
+            The value for client id.
+            </param>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetDataAccessEntityAsync">
+            <summary>
+            The get data access entity than define a data access to partition.
+            </summary>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.IDataAccessEntity"/>.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.IAuthorizationService.GetFeatureEntityAsync">
+            <summary>
+            The get feature access entity than define a functionality access.
+            </summary>
+            <returns>
+            The <see cref="T:TASuite.Commons.Crosscutting.IFeatureEntity"/>.
+            </returns>
+        </member>
+        <member name="T:TASuite.Commons.Crosscutting.ISystemSettingService">
+            <summary>
+            The SystemSettingService interface.
+            </summary>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISystemSettingService.ExistsSettingValue``1(System.String)">
+            <summary>
+            Verify if exists setting value.
+            </summary>
+            <param name="propertyName">
+            The property name.
+            </param>
+            <typeparam name="T">
+            The type to return.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Boolean"/> .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISystemSettingService.GetConnectionString(System.String)">
+            <summary>
+            The get connection string and verify if exists.
+            </summary>
+            <param name="connectionStringName">
+            The connection string name.
+            </param>
+            <returns>
+            The connection string.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISystemSettingService.GetSettingValue``1(System.String)">
+            <summary>
+            The get setting value and cast it to valid type.
+            </summary>
+            <param name="propertyName">
+            The property name.
+            </param>
+            <typeparam name="T">
+            The type to return.
+            </typeparam>
+            <returns>
+            Returns instance of T.
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISystemSettingService.ExistsSection``1(System.String)">
+            <summary>
+            The verify if exists section.
+            </summary>
+            <param name="name">
+            The property name.
+            </param>
+            <typeparam name="T">
+            The section type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Boolean"/> .
+            </returns>
+        </member>
+        <member name="M:TASuite.Commons.Crosscutting.ISystemSettingService.GetSection``1(System.String)">
+            <summary>
+            The get section from configuration file.
+            </summary>
+            <param name="name">
+            The property name.
+            </param>
+            <typeparam name="T">
+            The type of section.
+            </typeparam>
+            <returns>
+            The type of T instance.
+            </returns>
+        </member>
+    </members>
+</doc>

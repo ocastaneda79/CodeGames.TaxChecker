@@ -1,0 +1,18 @@
+{
+  "NServiceBus.DestinationSites": "Slave",
+  "NServiceBus.MessageId": "1859b26c-04f5-430f-901b-a8d3012a2579",
+  "NServiceBus.MessageIntent": "Send",
+  "NServiceBus.ReplyToAddress": "Gateway.Slave-gateway",
+  "NServiceBus.CorrelationId": "1859b26c-04f5-430f-901b-a8d3012a2579",
+  "NServiceBus.OriginatingMachine": "EUES02TALP12620",
+  "NServiceBus.OriginatingEndpoint": "Gateway.Master",
+  "$.diagnostics.originating.hostid": "6d82e1d99ef7a18e02d8e9d3612eaf98",
+  "NServiceBus.ContentType": "text\/xml",
+  "NServiceBus.EnclosedMessageTypes": "Shared.Messages.InvoiceCreatedMessage, Shared.Messages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "NServiceBus.ConversationId": "03752330-0dec-4690-ad39-a8d3012a2579",
+  "NServiceBus.Version": "6.4.3",
+  "NServiceBus.TimeSent": "2018-05-01 18:05:31:065154 Z",
+  "NServiceBus.OriginatingSite": "http,http:\/\/localhost:25599\/Master\/",
+  "NServiceBus.Retries": "3",
+  "NServiceBus.Retries.Timestamp": "2018-05-01 18:27:02:927181 Z"
+}

@@ -1,0 +1,505 @@
+﻿2018-05-01 19:54:37.784 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\Master\bin\Debug\' with level Info
+2018-05-01 19:54:38.167 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 19:54:38.267 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 19:54:38.300 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 19:54:38.645 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25599/Master/MaxConcurrency=1Default=False
+2018-05-01 19:56:43.683 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\Master\bin\Debug\' with level Info
+2018-05-01 19:56:44.306 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 19:56:44.393 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 19:56:44.442 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 19:56:45.027 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25599/Master/MaxConcurrency=1Default=False
+2018-05-01 20:01:39.148 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\Master\bin\Debug\' with level Info
+2018-05-01 20:01:39.819 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:01:39.925 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:01:39.957 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:01:40.654 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25599/Master/MaxConcurrency=1Default=False
+2018-05-01 20:05:41.262 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\Master\bin\Debug\' with level Info
+2018-05-01 20:05:41.996 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:05:42.076 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:05:42.135 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:05:42.534 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25599/Master/MaxConcurrency=1Default=False
+2018-05-01 20:08:51.822 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\Master\bin\Debug\' with level Info
+2018-05-01 20:08:52.435 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:08:52.508 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:08:52.538 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:08:52.969 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25599/Master/MaxConcurrency=1Default=False
+2018-05-01 20:13:41.081 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\Master\bin\Debug\' with level Info
+2018-05-01 20:13:41.759 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:13:41.829 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:13:41.843 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:13:42.298 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25599/Master/MaxConcurrency=1Default=False
+2018-05-01 20:19:14.503 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\Master\bin\Debug\' with level Info
+2018-05-01 20:19:15.002 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:19:15.098 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:19:15.149 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:19:15.571 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25599/Master/MaxConcurrency=1Default=False
+2018-05-01 20:24:27.453 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\Master\bin\Debug\' with level Info
+2018-05-01 20:24:28.096 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:24:28.215 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:24:28.238 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:24:28.728 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25599/Master/MaxConcurrency=1Default=False
+2018-05-01 20:26:05.174 INFO  DefaultFactory Logging to 'C:\Repos\CodeGame.TaxChequer\Master\bin\Debug\' with level Info
+2018-05-01 20:26:05.811 INFO  NServiceBus.LicenseManager Selected active license from HKEY_LOCAL_MACHINE\SOFTWARE\ParticularSoftware
+
+2018-05-01 20:26:05.884 INFO  NServiceBus.Installation.GatewayHttpListenerInstaller Did not attempt to grant user 'WKE\oscar.castaneda' HttpListener permissions since process is not running with elevate privileges. Processing will continue.
+To manually perform this action run the following command for each url from an admin console:
+netsh http add urlacl url={http://URL:PORT/[PATH/] | https://URL:PORT/[PATH/]} user="WKE\oscar.castaneda"
+2018-05-01 20:26:05.899 INFO  NServiceBus.PerformanceMonitorUsersInstaller Did not attempt to add user 'WKE\oscar.castaneda' to group 'Usuarios del monitor de sistema' since the process is not running with elevated privileges. Processing will continue. To manually perform this action, run the following command from an admin console:
+net localgroup "Usuarios del monitor de sistema" "WKE\oscar.castaneda" /add
+2018-05-01 20:26:06.480 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Receive channel started: http,http://localhost:25599/Master/MaxConcurrency=1Default=False
+2018-05-01 20:26:41.074 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.Master
+2018-05-01 20:26:41.218 INFO  NServiceBus.Features.Gateway+GatewayReceiverStartupTask Sending message to Gateway.Master
+2018-05-01 20:26:57.274 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message '35110390-d725-4fc7-b736-a8d3012fd079' because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MutateIncomingMessageBehavior.<InvokeIncomingMessageMutators>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\MessageMutators\MutateInstanceMessage\MutateIncomingMessageBehavior.cs:línea 44
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.UnitOfWorkBehavior.<InvokeUnitsOfWork>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\UnitOfWork\UnitOfWorkBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en NServiceBus.UnitOfWorkBehavior.<InvokeUnitsOfWork>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\UnitOfWork\UnitOfWorkBehavior.cs:línea 62
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MutateIncomingTransportMessageBehavior.<InvokeIncomingTransportMessagesMutators>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\MessageMutators\MutateTransportMessage\MutateIncomingTransportMessageBehavior.cs:línea 43
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:26:59.844 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message '8c4a5a94-c849-4d61-8aff-a8d3012ff4ca' because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:27:00.943 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message '35110390-d725-4fc7-b736-a8d3012fd079' because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:27:01.909 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message '8c4a5a94-c849-4d61-8aff-a8d3012ff4ca' because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:27:02.839 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message '35110390-d725-4fc7-b736-a8d3012fd079' because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:27:03.737 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message '8c4a5a94-c849-4d61-8aff-a8d3012ff4ca' because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:27:04.597 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message '35110390-d725-4fc7-b736-a8d3012fd079' because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:27:05.505 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message '8c4a5a94-c849-4d61-8aff-a8d3012ff4ca' because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:27:06.169 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message '35110390-d725-4fc7-b736-a8d3012fd079' because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:27:06.979 INFO  NServiceBus.RecoverabilityExecutor Immediate Retry is going to retry message '8c4a5a94-c849-4d61-8aff-a8d3012ff4ca' because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:27:07.594 WARN  NServiceBus.RecoverabilityExecutor Delayed Retry will reschedule message '35110390-d725-4fc7-b736-a8d3012fd079' after a delay of 00:00:10 because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
+2018-05-01 20:27:08.302 WARN  NServiceBus.RecoverabilityExecutor Delayed Retry will reschedule message '8c4a5a94-c849-4d61-8aff-a8d3012ff4ca' after a delay of 00:00:10 because of an exception:
+System.NotImplementedException: No se puede implementar el método o la operación.
+   en Master.InoviceRecievedHandler.Handle(InvoiceRecievedMessage message, IMessageHandlerContext context) en C:\Repos\CodeGame.TaxChequer\Master\InoviceRecievedHandler.cs:línea 17
+   en lambda_method(Closure , Object , Object , IMessageHandlerContext )
+   en NServiceBus.Pipeline.MessageHandler.Invoke(Object message, IMessageHandlerContext handlerContext) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\MessageHandler.cs:línea 43
+   en NServiceBus.InvokeHandlerTerminator.Terminate(IInvokeHandlerContext context) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\InvokeHandlerTerminator.cs:línea 24
+   en NServiceBus.Pipeline.PipelineTerminator`1.Invoke(T context, Func`2 next) en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\PipelineTerminator.cs:línea 27
+   en lambda_method(Closure , IInvokeHandlerContext )
+   en NServiceBus.LoadHandlersConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\LoadHandlersConnector.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.DeserializeLogicalMessagesConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\DeserializeLogicalMessagesConnector.cs:línea 33
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ReceivePerformanceDiagnosticsBehavior.<Invoke>d__2.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ReceivePerformanceDiagnosticsBehavior.cs:línea 40
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.ProcessingStatisticsBehavior.<Invoke>d__0.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Performance\Statistics\ProcessingStatisticsBehavior.cs:línea 27
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.TransportReceiveToPhysicalMessageProcessingConnector.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\Incoming\TransportReceiveToPhysicalMessageProcessingConnector.cs:línea 37
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en NServiceBus.MainPipelineExecutor.<Invoke>d__1.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Pipeline\MainPipelineExecutor.cs:línea 32
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en NServiceBus.LearningTransportMessagePump.<ProcessFile>d__9.MoveNext() en C:\BuildAgent\work\a93f853f0c1b9532\src\NServiceBus.Core\Transports\Learning\LearningTransportMessagePump.cs:línea 277
